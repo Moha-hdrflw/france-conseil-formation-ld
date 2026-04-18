@@ -1,0 +1,381 @@
+---
+const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
+---
+
+<section class="hero dark-section" id="hero">
+  <!-- Orbes de fond hero -->
+  <div class="orb orb-blue" style="opacity:0.18; left:-120px; top:40%;"></div>
+  <div class="orb orb-red"  style="opacity:0.12; right:-80px; top:55%;"></div>
+
+  <div class="hero-inner">
+
+    <!-- Néon glow derrière le logo -->
+    <div class="logo-neon" aria-hidden="true"></div>
+
+    <!-- Logo -->
+    <img
+      src="/logo-fcf.png"
+      alt="France Conseil & Formations"
+      class="hero-logo"
+      width="200"
+      height="70"
+    />
+
+    <!-- Badge disponibilité -->
+    <div class="available-badge" aria-label="Conseillers disponibles">
+      <span class="available-dot" aria-hidden="true"></span>
+      CONSEILLERS DISPONIBLES
+    </div>
+
+    <!-- Titre principal — hook fort -->
+    <h1 class="hero-title">
+      Devenez Chauffeur<br/>
+      <span class="accent-blue">VTC</span> ou <span class="accent-red">Taxi</span>
+    </h1>
+    <p class="hero-timing">en moins de 3 mois !</p>
+
+    <!-- Ligne tricolore centrée -->
+    <div class="tricolor hero-tricolor"><span></span><span></span><span></span></div>
+
+    <!-- Sous-titre rassurant -->
+    <p class="hero-sub">
+      Formation complète, accompagnement personnalisé<br class="br-desktop"/>
+      et préparation à l'examen.
+    </p>
+
+    <!-- Logos certification & financement — couleurs naturelles -->
+    <div class="hero-badges-logos" aria-label="Certifications et financements">
+      <div class="badge-logo-item">
+        <img src="/logo-mcf.png" alt="Mon Compte Formation — Financement CPF" class="badge-logo" />
+      </div>
+      <div class="badge-logo-sep" aria-hidden="true"></div>
+      <div class="badge-logo-item">
+        <img src="/logo-qualiopi.png" alt="Certification Qualiopi" class="badge-logo" />
+      </div>
+    </div>
+
+    <!-- Rareté -->
+    <div class="scarcity-badge" aria-label="Places limitées">
+      <span class="scarcity-dot" aria-hidden="true">⚡</span>
+      Places limitées chaque mois
+    </div>
+
+    <!-- CTA principal -->
+    <div class="cta-block">
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hero-cta-btn"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver mon appel gratuit →
+      </a>
+      <p class="cta-reassurance">
+        <span aria-hidden="true">🔒</span>
+        Appel gratuit et sans engagement · Lun–Dim
+      </p>
+    </div>
+
+    <!-- Stats rapides -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hs-val">100%</span>
+        <span class="hs-lbl">Taux d'accompagnement</span>
+      </div>
+      <div class="hero-stat-sep" aria-hidden="true"></div>
+      <div class="hero-stat">
+        <span class="hs-val">92,1%</span>
+        <span class="hs-lbl">Taux de réussite</span>
+      </div>
+      <div class="hero-stat-sep" aria-hidden="true"></div>
+      <div class="hero-stat">
+        <span class="hs-val">Agréé</span>
+        <span class="hs-lbl">Ministère des Transports</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(3rem, 8vw, 6rem) 1.2rem clamp(3rem, 6vw, 5rem);
+    max-width: 720px;
+    margin-inline: auto;
+    gap: 0;
+  }
+
+  /* ── Néon logo ── */
+  .logo-neon {
+    position: absolute;
+    top: clamp(1.5rem, 7vw, 4rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+      rgba(26, 109, 222, 0.20) 0%,
+      rgba(0, 85, 164, 0.10) 35%,
+      transparent 70%
+    );
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Logo ── */
+  .hero-logo {
+    position: relative;
+    z-index: 1;
+    height: clamp(64px, 16vw, 110px);
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1.6rem;
+    filter: drop-shadow(0 0 18px rgba(26,109,222,0.30)) drop-shadow(0 4px 20px rgba(0,0,0,0.45));
+  }
+
+  /* ── Badge disponibilité ── */
+  .available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(22, 163, 74, 0.12);
+    border: 1px solid rgba(22, 163, 74, 0.38);
+    border-radius: 999px;
+    padding: 0.45em 1.2em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+    letter-spacing: 0.1em;
+    color: #4ade80;
+    margin-bottom: 2rem;
+  }
+
+  .available-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+    50%       { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+  }
+
+  /* ── Titre ── */
+  .hero-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+  }
+
+  .hero-timing {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: #ffd060;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 0 20px rgba(255, 208, 96, 0.35);
+  }
+
+  .accent-blue { color: #5ba8ff; }
+  .accent-red  { color: var(--red); }
+
+  /* ── Tricolor ── */
+  .hero-tricolor {
+    margin-inline: auto;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── Sous-titre ── */
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+  }
+
+  .br-desktop { display: none; }
+  @media (min-width: 600px) { .br-desktop { display: inline; } }
+
+  /* ── Logos certifications — couleurs naturelles ── */
+  .hero-badges-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 1.4rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  }
+
+  .badge-logo-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .badge-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    /* Couleurs naturelles — pas de filtre */
+  }
+
+  .badge-logo-sep {
+    width: 1px;
+    height: 36px;
+    background: rgba(0, 85, 164, 0.18);
+    flex-shrink: 0;
+  }
+
+  /* ── Rareté ── */
+  .scarcity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239, 65, 53, 0.12);
+    border: 1px solid rgba(239, 65, 53, 0.35);
+    border-radius: 999px;
+    padding: 0.4em 1.1em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ff8b7b;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── CTA ── */
+  .hero-cta-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1.1em 2.8em;
+    border-radius: 6px;
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 32px rgba(0, 85, 164, 0.50);
+  }
+
+  .hero-cta-btn:hover {
+    background: #0066c8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(0, 85, 164, 0.65);
+  }
+
+  /* ── Stats ── */
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    width: 100%;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .hs-val {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .hs-lbl {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    max-width: 120px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .hero-stat-sep {
+    width: 1px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+  }
+
+  /* ── cta-block override pour dark-section ── */
+  .hero .cta-reassurance {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 0.82rem;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 480px) {
+    .hero-cta-btn {
+      width: 100%;
+      text-align: center;
+      clip-path: none;
+      border-radius: 8px;
+    }
+
+    .hero-stat-sep {
+      display: none;
+    }
+
+    .hero-stats {
+      gap: 1rem 2rem;
+    }
+
+    .hero-badges-logos {
+      padding: 0.7rem 1.2rem;
+      gap: 1rem;
+    }
+
+    .badge-logo {
+      height: 36px;
+    }
+  }
+</style>

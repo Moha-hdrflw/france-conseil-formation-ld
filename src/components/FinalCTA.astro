@@ -1,0 +1,171 @@
+---
+const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
+---
+
+<section class="section finalcta dark-section" id="contact">
+  <!-- Orbes intenses pour la section finale -->
+  <div class="orb orb-blue" style="opacity: 0.18; width: 700px; height: 700px; left: -200px; top: 50%;"></div>
+  <div class="orb orb-red"  style="opacity: 0.12; width: 600px; height: 600px; right: -150px; top: 50%;"></div>
+
+  <div class="container finalcta-inner">
+    <div class="text-center">
+      <p class="section-label" style="color: rgba(255,255,255,0.6); letter-spacing: 0.15em;">Passez à l'action</p>
+
+      <h2 class="title-xl finalcta-title">
+        Votre carte professionnelle<br/>
+        <span class="accent-blue-light">vous attend.</span>
+      </h2>
+
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+
+      <p class="finalcta-sub">
+        Réservez un appel gratuit avec l'un de nos conseillers.<br/>
+        On répond à toutes vos questions et on trouve la formule adaptée à votre situation.
+      </p>
+
+      <!-- Rareté -->
+      <div class="scarcity-final">
+        ⚡ Places limitées chaque mois — Ne tardez pas
+      </div>
+
+      <div class="cta-block finalcta-ctas">
+        <a
+          href={CALENDLY}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta finalcta-btn"
+          onclick="fbq && fbq('track', 'Lead')"
+        >
+          Réserver mon appel gratuit →
+        </a>
+        <p class="cta-reassurance finalcta-reassurance">
+          <span aria-hidden="true">🔒</span>
+          Appel gratuit et sans engagement · Réponse rapide à toutes vos questions
+        </p>
+      </div>
+
+      <div class="finalcta-badges">
+        <div class="fbadge">
+          <span class="fbadge-icon" aria-hidden="true">✅</span>
+          <span>Formation agréée Ministère</span>
+        </div>
+        <div class="fbadge">
+          <span class="fbadge-icon" aria-hidden="true">✅</span>
+          <span>92,1% de réussite</span>
+        </div>
+        <div class="fbadge">
+          <span class="fbadge-icon" aria-hidden="true">✅</span>
+          <span>100% accompagnement</span>
+        </div>
+        <div class="fbadge">
+          <span class="fbadge-icon" aria-hidden="true">✅</span>
+          <span>Financement CPF disponible</span>
+        </div>
+        <div class="fbadge">
+          <span class="fbadge-icon" aria-hidden="true">✅</span>
+          <span>Certification Qualiopi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .finalcta {
+    overflow: hidden;
+    background: var(--black);
+    border-top: 1px solid rgba(26, 109, 222, 0.18);
+  }
+
+  .finalcta-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .finalcta-title {
+    margin-bottom: 0;
+    color: #ffffff;
+  }
+
+  .accent-blue-light {
+    color: #5ba8ff;
+    text-shadow:
+      0 0 20px rgba(91, 168, 255, 0.30),
+      0 0 50px rgba(26, 109, 222, 0.15);
+  }
+
+  .finalcta-sub {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    max-width: 600px;
+    margin-inline: auto;
+    margin-top: 0.3rem;
+    line-height: 1.7;
+  }
+
+  /* ── Rareté ── */
+  .scarcity-final {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: rgba(239, 65, 53, 0.12);
+    border: 1px solid rgba(239, 65, 53, 0.35);
+    border-radius: 999px;
+    padding: 0.5em 1.4em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #ff8b7b;
+  }
+
+  /* ── CTA ── */
+  .finalcta-ctas {
+    margin-top: 2rem;
+  }
+
+  .finalcta-btn {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    padding: 1.1em 3em;
+    box-shadow: 0 6px 36px rgba(0, 85, 164, 0.55);
+  }
+
+  .finalcta-reassurance {
+    color: rgba(255, 255, 255, 0.42) !important;
+    font-size: 0.84rem;
+  }
+
+  /* ── Badges de réassurance ── */
+  .finalcta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 2rem;
+    margin-top: 2.8rem;
+  }
+
+  .fbadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.2s ease;
+  }
+
+  .fbadge:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .fbadge-icon {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .finalcta-btn {
+      clip-path: none;
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+</style>

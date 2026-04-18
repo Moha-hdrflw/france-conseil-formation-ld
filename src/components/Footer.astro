@@ -1,0 +1,201 @@
+---
+const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer dark-section">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img
+          src="/logo-fcf.png"
+          alt="France Conseil & Formations"
+          class="footer-logo-img"
+          width="140"
+          height="48"
+        />
+      </div>
+      <p class="footer-tagline">Centre agréé VTC & Taxi en Île-de-France.</p>
+
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta footer-cta"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver un appel
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 class="footer-col-title">Formations</h4>
+        <ul>
+          <li><a href="#formules">Eco VTC E-Learning</a></li>
+          <li><a href="#formules">Eco VTC Présentiel</a></li>
+          <li><a href="#formules">Eco Taxi Parisien</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Informations</h4>
+        <ul>
+          <li><a href="#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="#pourquoi-nous">Pourquoi nous</a></li>
+          <li><a href="#avis">Les témoignages</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul>
+          <li>
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onclick="fbq && fbq('track', 'Lead')">
+              Réserver un appel gratuit
+            </a>
+          </li>
+          <li>Île-de-France</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>&copy; {year} France Conseil & Formations. Tous droits réservés.</span>
+      <div class="footer-legal">
+        <span>Centre agréé Ministère des Transports</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span>Financement CPF possible</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.5);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    padding-block: 3.5rem;
+    align-items: start;
+  }
+
+  /* Brand */
+  .footer-logo {
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .footer-tagline {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-cta {
+    font-size: 0.9rem;
+    padding: 0.7em 1.8em;
+  }
+
+  /* Links */
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-col ul li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55);
+    transition: color 0.15s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: var(--white);
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-block: 1.2rem;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .sep {
+    color: rgba(255,255,255,0.2);
+  }
+
+  @media (max-width: 800px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

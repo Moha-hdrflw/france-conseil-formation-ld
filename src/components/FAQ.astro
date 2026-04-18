@@ -1,0 +1,136 @@
+---
+const faqs = [
+  {
+    q: "La formation est-elle agréée par l'État ?",
+    a: "Oui. France Conseil & Formations est un centre agréé par le Ministère chargé des Transports. Nos formations préparent aux examens officiels ECTSI (VTC) et à l'examen du certificat de capacité professionnelle Taxi.",
+  },
+  {
+    q: "Puis-je financer ma formation avec mon CPF ?",
+    a: "Le financement CPF est disponible selon votre situation professionnelle et votre solde CPF. Contactez-nous lors de votre appel gratuit et nous étudions ensemble les options de financement disponibles pour vous.",
+  },
+  {
+    q: "Comment se déroule le financement CPF ?",
+    a: "Le Compte Personnel de Formation (CPF) est notre principal mode de financement. Selon votre situation et votre solde CPF, tout ou partie de la formation peut être pris en charge. Notre conseiller vous guide dans le montage du dossier lors de votre appel gratuit.",
+  },
+  {
+    q: "Combien de temps dure la formation VTC ?",
+    a: "La formule e-learning dure 60h et la formule présentiel dure 52h. La durée réelle dépend de votre rythme. En moyenne, nos étudiants obtiennent leur carte professionnelle en moins de 3 mois.",
+  },
+  {
+    q: "Quelle est la différence entre la formation VTC et Taxi ?",
+    a: "La formation VTC (ECTSI) vous permet d'exercer comme chauffeur VTC pour des plateformes type Uber, Bolt, etc. La formation Taxi vous permet d'obtenir une carte de conducteur de taxi et d'exercer en taxi conventionnel parisien (G7, etc.).",
+  },
+  {
+    q: "Que se passe-t-il si je rate l'examen ?",
+    a: "Nos formateurs vous préparent intensivement. En cas d'échec, nous vous proposons des sessions de rattrapage et un accompagnement renforcé. Notre taux de réussite de 92,1% témoigne de l'efficacité de notre méthode.",
+  },
+  {
+    q: "Est-ce que je peux combiner e-learning et présentiel ?",
+    a: "La formule Eco Taxi Parisien inclut une combinaison e-learning / présentiel. Pour les formules VTC, choisissez le mode qui correspond à votre situation. Notre conseiller vous guidera lors de l'appel.",
+  },
+  {
+    q: "Quand commence la prochaine session ?",
+    a: "Nous avons des sessions qui démarrent régulièrement tout au long de l'année. Pour connaître les prochaines dates disponibles, réservez votre appel gratuit et nous vous communiquerons le calendrier.",
+  },
+];
+---
+
+<section class="section faq" id="faq">
+
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Questions fréquentes</p>
+      <h2 class="title-lg faq-title">Toutes vos<br/><span class="accent-blue">questions</span> répondues</h2>
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((item) => (
+        <details class="faq-item" name="faq">
+          <summary class="faq-question">
+            <span>{item.q}</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    overflow: hidden;
+    background: var(--bg);      /* #F8FAFC */
+  }
+
+  .faq-title {
+    color: var(--text);
+  }
+
+  .faq-list {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid rgba(0, 85, 164, 0.13);
+    box-shadow: 0 1px 12px rgba(0, 85, 164, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .faq-item[open] {
+    border-color: var(--blue);
+    box-shadow: 0 2px 20px rgba(0, 85, 164, 0.12);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    cursor: pointer;
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    list-style: none;
+    user-select: none;
+    color: var(--text);
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    font-size: 1.4rem;
+    color: var(--blue);
+    font-weight: 300;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.4rem 1.2rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-top: 1px solid rgba(0, 85, 164, 0.10);
+    padding-top: 1rem;
+  }
+
+  .accent-blue { color: var(--blue); }
+</style>

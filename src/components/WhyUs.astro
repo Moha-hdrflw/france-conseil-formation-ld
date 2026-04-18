@@ -1,0 +1,210 @@
+---
+const stats = [
+  { value: "100%", label: "Taux d'accompagnement" },
+  { value: "92,1%", label: "Taux de réussite" },
+  { value: "< 3 mois", label: "Pour être opérationnel" },
+  { value: "Agréé", label: "Ministère des Transports" },
+];
+
+const atouts = [
+  {
+    icon: "🏛️",
+    title: "Agrément officiel",
+    desc: "Centre agréé par le Ministère des Transports. Votre formation est reconnue par l'État.",
+  },
+  {
+    icon: "🎓",
+    title: "Formateurs qualifiés",
+    desc: "Anciens professionnels VTC & Taxi, formateurs certifiés avec 10+ ans d'expérience terrain.",
+  },
+  {
+    icon: "📱",
+    title: "Flexibilité totale",
+    desc: "E-learning accessible depuis votre mobile, à votre rythme. Présentiel disponible aussi.",
+  },
+  {
+    icon: "💳",
+    title: "Financement CPF",
+    desc: "Financement CPF disponible. Notre conseiller vous accompagne dans le montage du dossier lors de votre appel gratuit.",
+  },
+  {
+    icon: "🎯",
+    title: "92,1% de réussite",
+    desc: "Nos méthodes pédagogiques sont optimisées pour vous faire réussir l'examen du premier coup.",
+  },
+  {
+    icon: "🤝",
+    title: "100% Accompagnement",
+    desc: "De l'inscription jusqu'à l'obtention de votre carte pro, nos conseillers restent disponibles.",
+  },
+];
+---
+
+<section class="section whyus" id="pourquoi-nous">
+
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Pourquoi nous choisir</p>
+      <h2 class="title-lg whyus-title">Le centre de référence<br/><span class="accent-blue">VTC & Taxi</span> en Île-de-France</h2>
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+    </div>
+
+    <!-- Chiffres clés -->
+    <div class="stats-row">
+      {stats.map((s) => (
+        <div class="stat-item">
+          <span class="stat-value">{s.value}</span>
+          <span class="stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <hr class="divider" style="margin-block: 3.5rem; border-color: rgba(0,85,164,0.12);" />
+
+    <!-- Atouts — cards sombres sur fond clair -->
+    <div class="atouts-grid">
+      {atouts.map((a) => (
+        <div class="atout-card">
+          <div class="atout-icon" aria-hidden="true">{a.icon}</div>
+          <div class="atout-body">
+            <h3 class="atout-title">{a.title}</h3>
+            <p class="atout-desc">{a.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .whyus {
+    overflow: hidden;
+    background: var(--bg-alt);   /* #EEF4FF — bleu très léger */
+  }
+
+  .whyus-title {
+    color: var(--text);
+  }
+
+  /* ── Stats ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3.5rem;
+  }
+
+  .stat-item {
+    background: var(--white);
+    border: 1px solid rgba(0, 85, 164, 0.12);
+    box-shadow: 0 2px 20px rgba(0, 85, 164, 0.08);
+    border-radius: 12px;
+    padding: 1.6rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0, 85, 164, 0.14);
+  }
+
+  .stat-value {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--blue);
+    line-height: 1;
+    /* Légère lueur néon sur les chiffres */
+    text-shadow:
+      0 0 12px rgba(0, 85, 164, 0.20),
+      0 0 30px rgba(0, 85, 164, 0.08);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+
+  /* ── Atouts — cards sombres (texte blanc + néon) ── */
+  .atouts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .atout-card {
+    background: var(--card-dark);   /* rgba(8,28,72,0.82) — bleu nuit */
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.12),
+      0 0 0 0.5px rgba(26,109,222,0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  }
+
+  .atout-card:hover {
+    border-color: rgba(26, 109, 222, 0.55);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.18),
+      0 0 20px rgba(26, 109, 222, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .atout-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  .atout-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+    text-shadow:
+      0 0 10px rgba(26, 109, 222, 0.35),
+      0 0 24px rgba(26, 109, 222, 0.15);
+    letter-spacing: 0.02em;
+  }
+
+  .atout-desc {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.55;
+  }
+
+  .accent-blue { color: var(--blue); }
+
+  @media (max-width: 860px) {
+    .stats-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .atouts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .stats-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .atouts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

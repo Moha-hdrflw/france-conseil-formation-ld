@@ -1,0 +1,402 @@
+---
+const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
+
+const formules = [
+  {
+    id: "vtc-elearning",
+    title: "Eco VTC E-Learning",
+    price: "890",
+    duree: "60h",
+    mode: "À distance",
+    modeIcon: "💻",
+    popular: false,
+    color: "blue",
+    features: [
+      "Accès plateforme e-learning 24h/24",
+      "60h de contenu vidéo + quiz",
+      "Cours PDF téléchargeables",
+      "Examens blancs illimités",
+      "Suivi pédagogique personnalisé",
+      "Passage examen ECTSI inclus",
+    ],
+  },
+  {
+    id: "vtc-presentiel",
+    title: "Eco VTC Présentiel",
+    price: "1 190",
+    duree: "52h",
+    mode: "Présentiel",
+    modeIcon: "🏫",
+    popular: true,
+    color: "blue",
+    features: [
+      "52h en centre de formation Paris",
+      "Formateurs certifiés",
+      "Petits groupes (max 12 élèves)",
+      "Supports de cours inclus",
+      "Simulations d'examen en conditions réelles",
+      "Passage examen ECTSI inclus",
+    ],
+  },
+  {
+    id: "taxi-parisien",
+    title: "Eco Taxi Parisien",
+    price: "990",
+    duree: "52h",
+    mode: "E-learning / Présentiel",
+    modeIcon: "🚕",
+    popular: false,
+    color: "blue",
+    features: [
+      "Formation Taxi G7 homologuée",
+      "52h — modules flexibles",
+      "Topographie de Paris incluse",
+      "Réglementation taxi & tarifs",
+      "Examens blancs + correction",
+      "Passage examen officiel inclus",
+    ],
+  },
+];
+---
+
+<section class="section formules" id="formules">
+  <div class="orb orb-blue" style="opacity: 0.05; top: 40%; right: -100px; left: auto;"></div>
+
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Nos formules</p>
+      <h2 class="title-lg formules-title">Choisissez votre<br/><span class="accent-blue">formation</span></h2>
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+      <p class="formules-sub">Toutes les formules incluent le passage de l'examen officiel.<br/>Financement <strong>CPF disponible</strong> — notre conseiller vous guide.</p>
+    </div>
+
+    <div class="cards-grid">
+      {formules.map((f) => (
+        <article class:list={["formule-card", f.popular && "formule-card--popular", !f.popular && "formule-card--neon"]}>
+          {f.popular && <div class="popular-badge">⭐ Populaire</div>}
+
+          <div class="formule-header">
+            <div class="formule-mode">
+              <span aria-hidden="true">{f.modeIcon}</span>
+              <span>{f.mode}</span>
+            </div>
+            <h3 class="formule-title">{f.title}</h3>
+            <div class="formule-price">
+              <span class="price-amount">{f.price}€</span>
+              <span class="price-duree">— {f.duree}</span>
+            </div>
+          </div>
+
+          <ul class="formule-features">
+            {f.features.map((feat) => (
+              <li>
+                <span class="feat-check" aria-hidden="true">✓</span>
+                {feat}
+              </li>
+            ))}
+          </ul>
+
+          <div class="formule-cpf">
+            <span aria-hidden="true">💡</span>
+            <strong>Financement CPF disponible</strong>
+          </div>
+
+          <div class="cta-block">
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={["btn-cta formule-btn"]}
+              onclick="fbq && fbq('track', 'Lead')"
+            >
+              Je choisis cette formule
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- CTA après les offres -->
+    <div class="cta-block formules-cta">
+      <p class="formules-cta-txt">Vous ne savez pas quelle formule choisir ?</p>
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver mon appel gratuit
+      </a>
+      <p class="cta-reassurance">
+        <span aria-hidden="true">🔒</span>
+        Appel gratuit et sans engagement · Notre conseiller vous oriente
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .formules {
+    overflow: hidden;
+    background: var(--bg-mid);   /* #F1F5F9 */
+    position: relative;
+  }
+
+  .formules-title,
+  .formules-sub {
+    color: var(--text);
+  }
+
+  .formules-sub {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+  }
+
+  .formules-sub strong {
+    color: var(--blue);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+
+  /* ── Card standard ── */
+  .formule-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 85, 164, 0.14);
+    box-shadow: 0 2px 20px rgba(0, 85, 164, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 16px;
+    padding: 2rem 1.6rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  }
+
+  .formule-card:hover {
+    border-color: rgba(0, 85, 164, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 85, 164, 0.14);
+  }
+
+  /* ── Cards non-populaires : titre + prix en néon bleu ── */
+  .formule-card--neon .formule-title {
+    color: var(--blue-vivid);
+    text-shadow:
+      0 0 8px rgba(26, 109, 222, 0.50),
+      0 0 20px rgba(26, 109, 222, 0.25),
+      0 0 40px rgba(26, 109, 222, 0.10);
+  }
+
+  .formule-card--neon .price-amount {
+    color: var(--blue-vivid);
+    text-shadow:
+      0 0 10px rgba(26, 109, 222, 0.55),
+      0 0 24px rgba(26, 109, 222, 0.28),
+      0 0 48px rgba(26, 109, 222, 0.12);
+  }
+
+  /* ── Card populaire ── */
+  .formule-card--popular {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+    box-shadow:
+      0 0 0 1px rgba(26, 109, 222, 0.6),
+      0 8px 40px rgba(0, 85, 164, 0.30),
+      0 0 40px rgba(26, 109, 222, 0.12);
+    transform: scale(1.025);
+  }
+
+  .formule-card--popular:hover {
+    background: #0066c8;
+    transform: scale(1.025) translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgba(26,109,222,0.7),
+      0 12px 48px rgba(0, 85, 164, 0.38),
+      0 0 50px rgba(26, 109, 222, 0.18);
+  }
+
+  .formule-card--popular .formule-mode,
+  .formule-card--popular .price-duree {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .formule-card--popular .formule-title,
+  .formule-card--popular .price-amount {
+    color: #fff;
+  }
+
+  .formule-card--popular .formule-features li {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .formule-card--popular .feat-check {
+    color: #fff;
+  }
+
+  .formule-card--popular .formule-cpf {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.90);
+  }
+
+  .formule-card--popular .formule-cpf strong {
+    color: #fff;
+  }
+
+  .formule-card--popular .btn-cta {
+    background: #fff;
+    color: var(--blue);
+  }
+
+  .formule-card--popular .btn-cta:hover {
+    background: #f0f6ff;
+  }
+
+  /* ── Badge populaire ── */
+  .popular-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd060;
+    color: #1e2d45;
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3em 1.2em;
+    border-radius: 0 0 8px 8px;
+    white-space: nowrap;
+  }
+
+  .formule-mode {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .formule-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  .formule-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .price-amount {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 2.4rem;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .price-duree {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .formule-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex: 1;
+  }
+
+  .formule-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .feat-check {
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .formule-cpf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.55em 1em;
+  }
+
+  .formule-cpf strong {
+    color: var(--blue);
+  }
+
+  .formule-btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  }
+
+  /* ── CTA section ── */
+  .formules-cta {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .formules-cta-txt {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .formules-cta .cta-reassurance {
+    color: var(--text-muted);
+  }
+
+  .accent-blue { color: var(--blue); }
+
+  @media (max-width: 960px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    .formule-card--popular {
+      transform: none;
+    }
+
+    .formule-card--popular:hover {
+      transform: translateY(-4px);
+    }
+  }
+</style>

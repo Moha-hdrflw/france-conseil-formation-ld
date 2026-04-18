@@ -1,0 +1,231 @@
+---
+const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
+
+const steps = [
+  {
+    num: "01",
+    icon: "📅",
+    title: "Tu réserves un créneau",
+    desc: "Choisis le jour et l'heure qui te conviennent sur notre Calendly. L'appel dure environ 15 minutes. C'est gratuit, sans engagement.",
+    detail: "Disponible LUN – DIM",
+  },
+  {
+    num: "02",
+    icon: "📞",
+    title: "Un conseiller t'appelle",
+    desc: "Notre équipe est disponible du lundi au dimanche. Il répond à toutes tes questions : formation VTC ou Taxi, délais, financement CPF, conditions d'accès.",
+    detail: "Réponse à toutes tes questions",
+  },
+  {
+    num: "03",
+    icon: "✅",
+    title: "Tu t'inscris à la formation",
+    desc: "Si la formation te correspond, l'inscription se fait directement pendant l'appel. Simple, rapide, sans te déplacer. Le conseiller t'accompagne dans le montage du financement CPF.",
+    detail: "Inscription en direct · 100% en ligne",
+  },
+];
+---
+
+<section class="section hiw" id="comment-ca-se-passe">
+
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">L'appel avec votre conseiller</p>
+      <h2 class="title-lg hiw-title">Comment ça<br/><span class="accent-blue">se passe ?</span></h2>
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+      <p class="hiw-intro">Un seul appel suffit pour tout comprendre et démarrer votre formation VTC ou Taxi.</p>
+    </div>
+
+    <ol class="steps" aria-label="Déroulé de l'appel">
+      {steps.map((step, i) => (
+        <li class="step-card">
+          <!-- Connecteur desktop -->
+          {i < steps.length - 1 && (
+            <div class="step-connector" aria-hidden="true">
+              <span class="connector-arrow">›</span>
+            </div>
+          )}
+
+          <div class="step-top">
+            <span class="step-num neon-num">{step.num}</span>
+            <span class="step-icon" aria-hidden="true">{step.icon}</span>
+          </div>
+
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-desc">{step.desc}</p>
+
+          <div class="step-detail">
+            <span class="detail-dot" aria-hidden="true">●</span>
+            <span class="neon-text">{step.detail}</span>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <!-- CTA après section -->
+    <div class="cta-block hiw-cta">
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver mon appel gratuit
+      </a>
+      <p class="cta-reassurance">
+        <span aria-hidden="true">🔒</span>
+        Appel gratuit et sans engagement · Réponse rapide à toutes vos questions
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw {
+    overflow: hidden;
+    background: var(--bg);     /* #F8FAFC — blanc cassé */
+  }
+
+  .hiw-title {
+    color: var(--text);
+  }
+
+  .hiw-intro {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    max-width: 520px;
+    margin-inline: auto;
+    margin-top: 0.4rem;
+  }
+
+  /* ── Grille 3 colonnes ── */
+  .steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  /* ── Card blanche premium ── */
+  .step-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    border-radius: 16px;
+    padding: 2rem 1.6rem 1.6rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  }
+
+  .step-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 85, 164, 0.14), 0 0 0 1px rgba(0,85,164,0.12);
+  }
+
+  /* ── Connecteur ── */
+  .step-connector {
+    display: none;
+    position: absolute;
+    top: 2.4rem;
+    right: -1.1rem;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 700px) {
+    .step-connector { display: flex; }
+  }
+
+  .connector-arrow {
+    font-size: 1.8rem;
+    color: var(--blue);
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  /* ── Numéro + icône ── */
+  .step-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+  }
+
+  .step-num {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: 1;
+    /* neon-num class applique la couleur + glow */
+  }
+
+  .step-icon {
+    font-size: 2rem;
+  }
+
+  /* ── Titre étape ── */
+  .step-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  /* ── Description ── */
+  .step-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* ── Détail bas de card ── */
+  .step-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border-top: 1px solid var(--border);
+    padding-top: 0.8rem;
+    margin-top: 0.2rem;
+  }
+
+  .detail-dot {
+    font-size: 0.5rem;
+    color: #22c55e;
+  }
+
+  /* ── CTA ── */
+  .hiw-cta {
+    padding-top: 0.5rem;
+  }
+
+  .hiw-cta .cta-reassurance {
+    color: var(--text-muted);
+  }
+
+  .accent-blue { color: var(--blue); }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

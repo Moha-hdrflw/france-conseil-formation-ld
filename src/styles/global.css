@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600;700&display=swap');
+
+/* ────────────────────────────────────────
+   DESIGN TOKENS
+──────────────────────────────────────── */
+:root {
+  /* Brand */
+  --blue:          #0055A4;
+  --blue-vivid:    #1a6dde;
+  --red:           #EF4135;
+  --white:         #ffffff;
+
+  /* Light theme (défaut) */
+  --bg:            #F8FAFC;
+  --bg-alt:        #EEF4FF;
+  --bg-mid:        #F1F5F9;
+
+  /* Texte */
+  --text:          #1e2d45;
+  --text-muted:    rgba(30, 45, 69, 0.62);
+
+  /* Cards légères (sections claires) */
+  --card:          rgba(255, 255, 255, 0.95);
+  --card-hover:    #ffffff;
+  --border:        rgba(0, 85, 164, 0.14);
+  --border-hover:  rgba(0, 85, 164, 0.40);
+
+  /* Cards sombres (atouts, hero, finalcta) */
+  --card-dark:     rgba(8, 28, 72, 0.82);
+  --border-dark:   rgba(26, 109, 222, 0.35);
+
+  /* Fond sombre (hero + finalcta) */
+  --black:         #0c1220;
+
+  /* Ombres */
+  --shadow-card:   0 2px 24px rgba(0, 85, 164, 0.10), 0 1px 4px rgba(0, 0, 0, 0.05);
+  --shadow-neon:   0 0 20px rgba(26, 109, 222, 0.22), 0 0 60px rgba(0, 85, 164, 0.10);
+  --shadow-btn:    0 4px 20px rgba(0, 85, 164, 0.35);
+
+  /* Glass */
+  --glass-blur:    blur(14px);
+
+  /* Typo */
+  --font-title:    'Barlow Condensed', sans-serif;
+  --font-body:     'Barlow', sans-serif;
+
+  --section-pad:   clamp(4rem, 8vw, 7rem);
+  --container:     min(90%, 1100px);
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ── TYPOGRAPHY ── */
+.title-xl {
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  letter-spacing: -0.01em;
+}
+
+.title-lg {
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  letter-spacing: -0.01em;
+}
+
+.title-md {
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+/* ── CTA BUTTON ── */
+.btn-cta {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.9em 2.4em;
+  clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-cta:hover {
+  background: #0066c8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0, 85, 164, 0.45);
+}
+
+.btn-cta.red { background: var(--red); }
+.btn-cta.red:hover { background: #ff5447; }
+
+/* ── CONTAINER ── */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+/* ── SECTION ── */
+.section {
+  padding-block: var(--section-pad);
+  position: relative;
+}
+
+/* ── DARK SECTION (Hero + FinalCTA) ── */
+.dark-section {
+  background: var(--black);
+  color: #ffffff;
+  --card:         rgba(8, 28, 72, 0.60);
+  --card-hover:   rgba(26, 109, 222, 0.18);
+  --border:       rgba(26, 109, 222, 0.25);
+  --border-hover: rgba(26, 109, 222, 0.55);
+  --text:         #ffffff;
+  --text-muted:   rgba(255, 255, 255, 0.65);
+  --shadow-card:  0 4px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* ── ORBES ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-blue {
+  background: var(--blue);
+  opacity: 0.08;
+  width: 600px;
+  height: 600px;
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.orb-red {
+  background: var(--red);
+  opacity: 0.06;
+  width: 500px;
+  height: 500px;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── TRICOLOR ── */
+.tricolor {
+  display: flex;
+  height: 4px;
+  width: 80px;
+  margin-block: 1.2rem;
+  gap: 2px;
+}
+
+.tricolor span:nth-child(1) { flex: 1; background: var(--blue); }
+.tricolor span:nth-child(2) { flex: 1; background: #8fa8cc; opacity: 0.7; }
+.tricolor span:nth-child(3) { flex: 1; background: var(--red); }
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  margin-bottom: 0.6rem;
+}
+
+/* ── BADGE ── */
+.badge {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3em 0.8em;
+  border-radius: 2px;
+}
+
+.badge-blue { background: var(--blue); color: var(--white); }
+.badge-red  { background: var(--red);  color: var(--white); }
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-block: 0;
+}
+
+/* ── UTILITY ── */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+/* ── NÉON TEXTE (numéros, chips info) ── */
+.neon-num {
+  color: var(--blue-vivid);
+  text-shadow:
+    0 0 8px rgba(26, 109, 222, 0.55),
+    0 0 20px rgba(26, 109, 222, 0.28),
+    0 0 40px rgba(26, 109, 222, 0.12);
+}
+
+.neon-text {
+  color: var(--blue-vivid);
+  text-shadow:
+    0 0 6px rgba(26, 109, 222, 0.45),
+    0 0 14px rgba(26, 109, 222, 0.22);
+}
+
+/* ── NEON BG — orbes légers sur fond clair ── */
+.neon-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.neon-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Halo haut gauche — bleu très doux */
+.neon-orb-1 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  top: -20%;
+  left: -15%;
+  background: radial-gradient(circle, rgba(0, 85, 164, 0.06) 0%, rgba(0, 85, 164, 0.02) 45%, transparent 70%);
+  filter: blur(60px);
+}
+
+/* Halo bas droite — bleu très léger */
+.neon-orb-2 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 700px;
+  max-height: 700px;
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(0, 85, 164, 0.05) 0%, rgba(26, 109, 222, 0.02) 45%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Halo centre — très subtil */
+.neon-orb-3 {
+  width: 40vw;
+  height: 40vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: 40%;
+  left: 35%;
+  background: radial-gradient(circle, rgba(0, 85, 164, 0.03) 0%, transparent 65%);
+  filter: blur(100px);
+}
+
+/* ── CTA WRAPPER RÉUTILISABLE ── */
+.cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.cta-reassurance {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dark-section .cta-reassurance {
+  color: rgba(255, 255, 255, 0.45);
+}

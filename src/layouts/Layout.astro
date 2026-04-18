@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "France Conseil & Formations — Centre agréé VTC & Taxi",
+  description = "Obtenez votre carte professionnelle VTC ou Taxi en moins de 3 mois. Formation agréée, financement possible. Réservez votre appel gratuit.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+
+    <!-- Meta Pixel Code -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'VOTRE_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=VOTRE_PIXEL_ID&ev=PageView&noscript=1" />
+    </noscript>
+    -->
+  </head>
+  <body>
+    <!-- Orbes de fond subtils -->
+    <div class="neon-bg" aria-hidden="true">
+      <div class="neon-orb neon-orb-1"></div>
+      <div class="neon-orb neon-orb-2"></div>
+      <div class="neon-orb neon-orb-3"></div>
+    </div>
+
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,199 @@
+---
+const reviews = [
+  {
+    name: "Karim B.",
+    date: "Mars 2026",
+    stars: 5,
+    formule: "Eco VTC Présentiel",
+    text: "Formation au top ! Les formateurs sont très pros et pédagogues. J'ai eu ma carte VTC du premier coup. Le suivi avant et après l'examen est vraiment rassurant. Je recommande à 100%.",
+  },
+  {
+    name: "Amina L.",
+    date: "Février 2026",
+    stars: 5,
+    formule: "Eco VTC E-Learning",
+    text: "J'ai suivi la formation en e-learning depuis chez moi avec 2 enfants. C'était parfaitement faisable grâce à la flexibilité. Les supports sont clairs et les examens blancs très bien faits.",
+  },
+  {
+    name: "Sofiane M.",
+    date: "Janvier 2026",
+    stars: 5,
+    formule: "Eco Taxi Parisien",
+    text: "Le cours sur la topographie de Paris est excellent. On voit que les formateurs connaissent vraiment le métier. La partie réglementation est très bien expliquée. Exam réussi dès le premier essai !",
+  },
+  {
+    name: "Youssef D.",
+    date: "Décembre 2025",
+    stars: 5,
+    formule: "Eco VTC Présentiel",
+    text: "Le financement CPF m'a permis de me lancer sans débourser un centime. Le conseiller au téléphone était très disponible pour m'orienter et monter le dossier. Centre sérieux, je ne regrette pas mon choix.",
+  },
+  {
+    name: "Dounia R.",
+    date: "Novembre 2025",
+    stars: 5,
+    formule: "Eco VTC E-Learning",
+    text: "J'avais peur de pas y arriver mais l'équipe m'a vraiment accompagnée. Les quiz sont super pour mémoriser. J'ai eu 87/100 à l'examen. Merci France Conseil & Formations !",
+  },
+  {
+    name: "Mehdi K.",
+    date: "Octobre 2025",
+    stars: 5,
+    formule: "Eco Taxi Parisien",
+    text: "Très bonne organisation, cours complets. Le formateur connaît tous les pièges de l'examen. J'ai apprécié les sessions de révision en direct. Centre sérieux et professionnel.",
+  },
+];
+---
+
+<section class="section reviews" id="avis">
+
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Avis de nos étudiants</p>
+      <h2 class="title-lg reviews-title">Ils ont réussi<br/>grâce à <span class="accent-blue">France Conseil</span></h2>
+      <div class="tricolor" style="margin-inline: auto;"><span></span><span></span><span></span></div>
+      <p class="reviews-meta">Note moyenne <strong>4.9/5</strong> — Basée sur +200 avis vérifiés</p>
+    </div>
+
+    <div class="reviews-grid">
+      {reviews.map((r) => (
+        <article class="review-card">
+          <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">
+              {r.name.charAt(0)}
+            </div>
+            <div class="review-meta">
+              <span class="review-name">{r.name}</span>
+              <span class="review-formule">{r.formule}</span>
+            </div>
+            <span class="review-date">{r.date}</span>
+          </div>
+          <div class="review-stars" aria-label={`${r.stars} étoiles sur 5`}>
+            {"★".repeat(r.stars)}
+          </div>
+          <p class="review-text">{r.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    overflow: hidden;
+    background: var(--bg-alt);   /* #EEF4FF */
+  }
+
+  .reviews-title {
+    color: var(--text);
+  }
+
+  .reviews-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  .reviews-meta strong {
+    color: var(--text);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 3.5rem;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 85, 164, 0.12);
+    box-shadow: 0 2px 16px rgba(0, 85, 164, 0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .review-card:hover {
+    border-color: rgba(0, 85, 164, 0.28);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0, 85, 164, 0.12);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .review-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .review-meta {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .review-formule {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .review-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .review-stars {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .review-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  .accent-blue { color: var(--blue); }
+
+  @media (max-width: 860px) {
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
