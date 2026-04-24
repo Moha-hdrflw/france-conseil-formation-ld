@@ -63,24 +63,15 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
     <!-- Revenus possibles — Social proof -->
     <div class="earnings-block" aria-label="Revenus mensuels possibles en tant que chauffeur">
       <div class="earnings-header">
-        <span class="earnings-tag">💰 Revenus mensuels estimés</span>
+        <span class="earnings-tag">💰 Revenus mensuels estimés jusqu'à</span>
       </div>
-      <div class="earnings-row">
-        <div class="earnings-item">
-          <span class="earnings-icon" aria-hidden="true">🚗</span>
-          <div class="earnings-detail">
-            <span class="earnings-role">Chauffeur VTC</span>
-            <span class="earnings-range">3 500€ – 5 000€<sup>+</sup></span>
-          </div>
-        </div>
-        <div class="earnings-sep" aria-hidden="true"></div>
-        <div class="earnings-item">
-          <span class="earnings-icon" aria-hidden="true">🚕</span>
-          <div class="earnings-detail">
-            <span class="earnings-role">Chauffeur Taxi</span>
-            <span class="earnings-range">3 000€ – 4 500€<sup>+</sup></span>
-          </div>
-        </div>
+      <div class="earnings-center">
+        <span class="earnings-roles">
+          <span class="earnings-icon" aria-hidden="true">🚗</span> VTC
+          &amp;
+          <span class="earnings-icon" aria-hidden="true">🚕</span> TAXI
+        </span>
+        <span class="earnings-range">2 500€ – 5 000€<sup>+</sup></span>
       </div>
       <p class="earnings-note">* Estimations basées sur une activité à temps plein en Île-de-France</p>
     </div>
@@ -396,43 +387,32 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
     color: #1e2d45;
   }
 
-  .earnings-row {
+  .earnings-center {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    gap: 0.45rem;
   }
 
-  .earnings-item {
+  .earnings-roles {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    flex: 1;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1e2d45;
   }
 
   .earnings-icon {
-    font-size: 1.6rem;
-    flex-shrink: 0;
-  }
-
-  .earnings-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-
-  .earnings-role {
-    font-size: 0.75rem;
-    color: #1e2d45;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 600;
+    font-size: 1.1rem;
   }
 
   .earnings-range {
     font-family: var(--font-title);
     font-weight: 900;
-    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     color: #1a6dde;
     line-height: 1;
     text-shadow:
@@ -442,14 +422,7 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
   }
 
   .earnings-range sup {
-    font-size: 0.7em;
-  }
-
-  .earnings-sep {
-    width: 1px;
-    height: 40px;
-    background: rgba(0, 85, 164, 0.15);
-    flex-shrink: 0;
+    font-size: 0.65em;
   }
 
   .earnings-note {
