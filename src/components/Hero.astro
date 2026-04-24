@@ -375,11 +375,11 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
   .earnings-block {
     width: 100%;
     max-width: 480px;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 14px;
+    background: #F8FAFC;
+    border: 1px solid rgba(0, 85, 164, 0.12);
+    border-radius: 16px;
     padding: 1.1rem 1.4rem;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255,255,255,0.08);
     margin-bottom: 1.5rem;
   }
 
@@ -393,7 +393,7 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.09em;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(30, 45, 69, 0.55);
   }
 
   .earnings-row {
@@ -423,7 +423,7 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
 
   .earnings-role {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(30, 45, 69, 0.55);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 600;
@@ -432,10 +432,13 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
   .earnings-range {
     font-family: var(--font-title);
     font-weight: 900;
-    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-    color: #ffd060;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    color: #1a6dde;
     line-height: 1;
-    text-shadow: 0 0 16px rgba(255, 208, 96, 0.30);
+    text-shadow:
+      0 0 8px rgba(26, 109, 222, 0.55),
+      0 0 20px rgba(26, 109, 222, 0.30),
+      0 0 40px rgba(26, 109, 222, 0.15);
   }
 
   .earnings-range sup {
@@ -445,13 +448,13 @@ const CALENDLY = "https://calendly.com/hello-formations/30min?month=2026-04";
   .earnings-sep {
     width: 1px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 85, 164, 0.15);
     flex-shrink: 0;
   }
 
   .earnings-note {
     font-size: 0.68rem;
-    color: rgba(255, 255, 255, 0.28);
+    color: rgba(30, 45, 69, 0.35);
     text-align: center;
     margin-top: 0.75rem;
     line-height: 1.4;
