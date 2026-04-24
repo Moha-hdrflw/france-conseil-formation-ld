@@ -121,6 +121,7 @@ const formules = [
 
     <!-- CTA après les offres -->
     <div class="cta-block formules-cta">
+      <p class="formules-hook-cta">Prêt à changer votre vie ?</p>
       <p class="formules-cta-txt">Vous ne savez pas quelle formule choisir ?</p>
       <a
         href={CALENDLY}
@@ -393,6 +394,16 @@ const formules = [
     text-align: center;
     display: block;
     clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  }
+
+  .formules-hook-cta {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    color: var(--blue);
+    font-style: italic;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.3rem;
   }
 
   /* ── CTA section ── */
