@@ -526,8 +526,8 @@ const programme = [
   }
 
   .vmdtr-card {
-    background: var(--white);
-    border: 2px solid var(--blue);
+    background: var(--blue);
+    border: 2px solid rgba(26,109,222,0.60);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     max-width: 560px;
@@ -535,14 +535,17 @@ const programme = [
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-    box-shadow: 0 0 0 1px rgba(26,109,222,0.15), 0 8px 40px rgba(0,85,164,0.12);
+    box-shadow:
+      0 0 0 1px rgba(26,109,222,0.30),
+      0 8px 40px rgba(0,85,164,0.35),
+      0 0 60px rgba(26,109,222,0.12);
   }
 
   .vmdtr-card-header { display: flex; flex-direction: column; gap: 0.5rem; }
 
   .vmdtr-card-mode {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: rgba(255,255,255,0.65);
     font-weight: 600;
   }
 
@@ -551,8 +554,11 @@ const programme = [
     font-weight: 900;
     font-size: clamp(1.4rem, 3vw, 1.9rem);
     text-transform: uppercase;
-    color: var(--blue);
-    text-shadow: 0 0 10px rgba(26,109,222,0.25);
+    color: #ffffff;
+    text-shadow:
+      0 0 10px rgba(255,255,255,0.80),
+      0 0 24px rgba(255,255,255,0.40),
+      0 0 48px rgba(255,255,255,0.20);
     line-height: 1.1;
   }
 
@@ -568,17 +574,17 @@ const programme = [
     font-family: var(--font-title);
     font-weight: 700;
     font-size: 0.9rem;
-    color: var(--blue);
+    color: rgba(255,255,255,0.85);
   }
 
   .vmdtr-tag {
-    background: rgba(0,85,164,0.08);
-    border: 1px solid rgba(0,85,164,0.18);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.30);
     border-radius: 999px;
     padding: 0.25em 0.9em;
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--blue);
+    color: #ffffff;
   }
 
   .vmdtr-features {
@@ -593,27 +599,31 @@ const programme = [
     align-items: flex-start;
     gap: 0.65rem;
     font-size: 0.95rem;
-    color: var(--text);
+    color: #1e2d45;
     line-height: 1.5;
   }
 
   .feat-check {
-    color: var(--blue);
-    font-weight: 700;
+    color: #ffffff;
+    font-weight: 900;
     flex-shrink: 0;
     margin-top: 0.1em;
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.90),
+      0 0 20px rgba(255,255,255,0.50);
   }
 
   .vmdtr-cpf {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(0,85,164,0.06);
-    border: 1px solid rgba(0,85,164,0.15);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.30);
     border-radius: 8px;
     padding: 0.7rem 1rem;
     font-size: 0.9rem;
-    color: var(--blue);
+    color: #ffffff;
+    font-weight: 600;
   }
 
   /* ══ PROGRAMME ══ */
