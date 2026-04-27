@@ -124,6 +124,92 @@ const programme = [
       </div>
     </section>
 
+    <!-- ══ MÉTIER D'AVENIR ══ -->
+    <section class="section avenir" style="background:var(--bg);">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — VMDTR</p>
+          <h2 class="title-lg" style="color:var(--text);">Un métier d'avenir,<br/><span class="accent-blue">une liberté totale</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+          <p class="avenir-intro">Le marché du moto-taxi explose en France. Devenez votre propre patron et construisez votre liberté financière.</p>
+        </div>
+
+        <!-- Chiffres clés -->
+        <div class="avenir-stats">
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">+40%</span>
+            <span class="avenir-stat-lbl">de croissance du marché moto-taxi en 5 ans</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">2 500€</span>
+            <span class="avenir-stat-lbl">de revenus mensuels dès le démarrage</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">100%</span>
+            <span class="avenir-stat-lbl">indépendant — tu choisis tes horaires</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">&lt; 3 mois</span>
+            <span class="avenir-stat-lbl">pour être opérationnel et générer des revenus</span>
+          </div>
+        </div>
+
+        <!-- Atouts liberté -->
+        <div class="avenir-atouts">
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🏍️</span>
+            <div>
+              <h3 class="avenir-atout-title">Ton propre patron</h3>
+              <p class="avenir-atout-desc">Aucun supérieur, aucun horaire imposé. Tu travailles quand tu veux, où tu veux. La moto-taxi, c'est l'entrepreneuriat accessible dès aujourd'hui.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">📈</span>
+            <div>
+              <h3 class="avenir-atout-title">Un marché en pleine explosion</h3>
+              <p class="avenir-atout-desc">Les embouteillages parisiens font exploser la demande. Les clients choisissent la moto pour gagner du temps. La concurrence est encore faible — c'est le bon moment.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">💶</span>
+            <div>
+              <h3 class="avenir-atout-title">Revenus rapides et évolutifs</h3>
+              <p class="avenir-atout-desc">Dès l'obtention de ta carte professionnelle, tu peux facturer tes courses. Certains chauffeurs VMDTR atteignent 4 000€/mois net à temps plein.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🛡️</span>
+            <div>
+              <h3 class="avenir-atout-title">Un statut reconnu par l'État</h3>
+              <p class="avenir-atout-desc">Le VMDTR est un statut officiel encadré par le Ministère des Transports. Contrairement au VTC classique, tu te démarques avec une spécialité rare et recherchée.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">⏱️</span>
+            <div>
+              <h3 class="avenir-atout-title">Formation courte, résultats rapides</h3>
+              <p class="avenir-atout-desc">74h seulement pour changer de vie. Disponible jour et soir pour s'adapter à votre emploi du temps. Le financement CPF permet de se former sans avancer un euro.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🌍</span>
+            <div>
+              <h3 class="avenir-atout-title">Partout en France</h3>
+              <p class="avenir-atout-desc">Paris, Lyon, Marseille, Bordeaux… Les grandes villes cherchent des chauffeurs VMDTR qualifiés. Ta carte professionnelle est valable sur tout le territoire français.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA intermédiaire -->
+        <div class="cta-block" style="margin-top:3rem;">
+          <a href="https://calendly.com/servicefranceconseilformation/30min?month=2026-04" target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">
+            Je veux devenir chauffeur VMDTR →
+          </a>
+          <p class="cta-reassurance"><span>🔒</span> Appel gratuit · Sans engagement · Lun–Dim</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ══ L'ESSENTIEL ══ -->
     <section class="section essentiel">
       <div class="container">
@@ -688,9 +774,113 @@ const programme = [
   .fstat-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; text-align: center; }
   .fstat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
 
+  /* ══ MÉTIER D'AVENIR ══ */
+  .avenir-intro {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin-inline: auto;
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .avenir-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .avenir-stat-card {
+    background: var(--white);
+    border: 1px solid rgba(0,85,164,0.12);
+    border-radius: 14px;
+    padding: 1.6rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 20px rgba(0,85,164,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .avenir-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0,85,164,0.14);
+  }
+
+  .avenir-stat-val {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: var(--blue);
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(0,85,164,0.20);
+  }
+
+  .avenir-stat-lbl {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .avenir-atouts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    margin-top: 3rem;
+  }
+
+  .avenir-atout {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 14px;
+    padding: 1.6rem 1.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .avenir-atout:hover {
+    border-color: rgba(26,109,222,0.55);
+    transform: translateY(-3px);
+  }
+
+  .avenir-atout-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  .avenir-atout-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(26,109,222,0.35);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .avenir-atout-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+  }
+
   /* ══ RESPONSIVE ══ */
+  @media (max-width: 860px) {
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
+    .avenir-atouts { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 700px) {
     .essentiel-grid { grid-template-columns: repeat(2, 1fr); }
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
     .programme-item { grid-template-columns: 3.5rem 1fr; }
     .programme-num { font-size: 2.2rem; }
     .vmdtr-cta-btn { width: 100%; text-align: center; clip-path: none; border-radius: 8px; }
@@ -701,5 +891,6 @@ const programme = [
 
   @media (max-width: 480px) {
     .fstat-sep { display: none; }
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
