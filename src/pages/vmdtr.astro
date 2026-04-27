@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
+---
+
+<Layout
+  title="Formation VMDTR — France Conseil & Formations"
+  description="Formation VMDTR agréée par France Conseil & Formations. Obtenez votre certificat rapidement. Réservez votre appel gratuit."
+>
+  <main class="vmdtr-page">
+    <div class="vmdtr-inner">
+      <img src="/logo-fcf.png" alt="France Conseil & Formations" class="vmdtr-logo" />
+      <h1 class="vmdtr-title">Formation <span class="accent-blue">VMDTR</span></h1>
+      <p class="vmdtr-sub">La page de cette formation arrive très bientôt.<br/>En attendant, réservez votre appel gratuit avec un conseiller.</p>
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver mon appel gratuit →
+      </a>
+      <a href="/" class="vmdtr-back">← Retour à l'accueil</a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .vmdtr-page {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    padding: 2rem 1.2rem;
+  }
+
+  .vmdtr-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+
+  .vmdtr-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .vmdtr-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .accent-blue { color: var(--blue); }
+
+  .vmdtr-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .vmdtr-back {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    text-decoration: underline;
+    margin-top: 0.5rem;
+  }
+
+  .vmdtr-back:hover {
+    color: var(--blue);
+  }
+</style>

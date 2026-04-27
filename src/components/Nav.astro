@@ -14,15 +14,20 @@ const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month
       />
     </a>
 
-    <a
-      href={CALENDLY}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn-cta nav-cta"
-      onclick="fbq && fbq('track', 'Lead')"
-    >
-      Réserver mon appel gratuit
-    </a>
+    <div class="nav-actions">
+      <a href="/vmdtr" class="nav-vmdtr-btn">
+        FORMATION VMDTR
+      </a>
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta nav-cta"
+        onclick="fbq && fbq('track', 'Lead')"
+      >
+        Réserver mon appel gratuit
+      </a>
+    </div>
   </nav>
 </header>
 
@@ -61,6 +66,32 @@ const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month
     display: block;
   }
 
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .nav-vmdtr-btn {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    border: 1.5px solid var(--blue);
+    border-radius: 4px;
+    padding: 0.55em 1.1em;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-vmdtr-btn:hover {
+    background: var(--blue);
+    color: #fff;
+  }
+
   .nav-cta {
     font-size: clamp(0.75rem, 1.8vw, 0.95rem);
     padding: 0.7em 1.6em;
@@ -68,6 +99,9 @@ const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month
   }
 
   @media (max-width: 480px) {
+    .nav-vmdtr-btn {
+      display: none;
+    }
     .nav-cta {
       padding: 0.6em 1.1em;
     }
