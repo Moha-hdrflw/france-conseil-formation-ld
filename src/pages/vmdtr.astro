@@ -219,14 +219,16 @@ const programme = [
 
         <div class="programme-list">
           {programme.map((item, i) => (
-            <div class="programme-item">
-              <div class="programme-num neon-num">{item.num}</div>
-              <div class="programme-body">
-                <h3 class="programme-title">{item.title}</h3>
-                <p class="programme-desc">{item.desc}</p>
+            <>
+              <div class="programme-item">
+                <div class="programme-num neon-num">{item.num}</div>
+                <div class="programme-body">
+                  <h3 class="programme-title">{item.title}</h3>
+                  <p class="programme-desc">{item.desc}</p>
+                </div>
               </div>
               {i < programme.length - 1 && <div class="programme-sep"></div>}
-            </div>
+            </>
           ))}
         </div>
       </div>
