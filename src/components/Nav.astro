@@ -1,5 +1,8 @@
 ---
 const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
+const isVmdtr = Astro.url.pathname.startsWith("/vmdtr");
+const otherLabel = isVmdtr ? "FORMATION TAXI & VTC" : "FORMATION VMDTR";
+const otherHref  = isVmdtr ? "/" : "/vmdtr";
 ---
 
 <header class="nav-wrapper">
@@ -15,8 +18,8 @@ const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month
     </a>
 
     <div class="nav-actions">
-      <a href="/vmdtr" class="nav-vmdtr-btn">
-        FORMATION VMDTR
+      <a href={otherHref} class="nav-vmdtr-btn">
+        {otherLabel}
       </a>
       <a
         href={CALENDLY}
