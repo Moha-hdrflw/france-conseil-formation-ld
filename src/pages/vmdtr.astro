@@ -1,82 +1,700 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
+
+const programme = [
+  {
+    num: "01",
+    title: "Réglementation VMDTR",
+    desc: "Cadre juridique du transport de personnes à deux ou trois roues, législation spécifique VMDTR, droits et obligations du conducteur.",
+  },
+  {
+    num: "02",
+    title: "Sécurité & Conduite Spécialisée",
+    desc: "Conduite sécuritaire avec passager, techniques de pilotage urbain, gestion des risques spécifiques deux-roues, équipements de protection.",
+  },
+  {
+    num: "03",
+    title: "Gestion d'entreprise",
+    desc: "Création et gestion de votre activité VMDTR, choix du statut juridique, obligations fiscales et assurances spécifiques.",
+  },
+  {
+    num: "04",
+    title: "Relation Client",
+    desc: "Accueil et mise en confiance du passager, briefing sécurité, communication professionnelle et fidélisation de la clientèle.",
+  },
+  {
+    num: "05",
+    title: "Premiers Secours (PSC1)",
+    desc: "Formation aux gestes de premiers secours, protocole d'urgence en cas d'accident, utilisation du défibrillateur.",
+  },
+  {
+    num: "06",
+    title: "Examen Blanc & Préparation",
+    desc: "Entraînement intensif avec QCM chronométrés en conditions d'examen, correction et stratégies de réussite.",
+  },
+];
 ---
 
 <Layout
-  title="Formation VMDTR — France Conseil & Formations"
-  description="Formation VMDTR agréée par France Conseil & Formations. Obtenez votre certificat rapidement. Réservez votre appel gratuit."
+  title="Formation VMDTR Moto-Taxi — France Conseil & Formations"
+  description="Devenez chauffeur de moto-taxi professionnel. Formation VMDTR agréée 74h, financement CPF disponible. Réservez votre appel gratuit."
 >
-  <main class="vmdtr-page">
-    <div class="vmdtr-inner">
-      <img src="/logo-fcf.png" alt="France Conseil & Formations" class="vmdtr-logo" />
-      <h1 class="vmdtr-title">Formation <span class="accent-blue">VMDTR</span></h1>
-      <p class="vmdtr-sub">La page de cette formation arrive très bientôt.<br/>En attendant, réservez votre appel gratuit avec un conseiller.</p>
-      <a
-        href={CALENDLY}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-cta"
-        onclick="fbq && fbq('track', 'Lead')"
-      >
-        Réserver mon appel gratuit →
-      </a>
-      <a href="/" class="vmdtr-back">← Retour à l'accueil</a>
-    </div>
+  <Nav />
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="vmdtr-hero dark-section">
+      <div class="orb orb-blue" style="opacity:0.18; left:-120px; top:40%;"></div>
+      <div class="orb orb-red"  style="opacity:0.12; right:-80px; top:55%;"></div>
+
+      <div class="vmdtr-hero-inner">
+        <div class="logo-neon" aria-hidden="true"></div>
+
+        <img src="/logo-fcf.png" alt="France Conseil & Formations" class="vmdtr-logo" width="200" height="70" />
+
+        <div class="available-badge">
+          <span class="available-dot" aria-hidden="true"></span>
+          CONSEILLERS DISPONIBLES
+        </div>
+
+        <div class="vmdtr-qualiopi-badge">
+          <span class="qualiopi-label">QUALIOPI</span>
+          <span>Formation certifiée Qualiopi</span>
+        </div>
+
+        <h1 class="vmdtr-hero-title">
+          Formation<br/>
+          <span class="accent-blue">VMDTR</span><br/>
+          <span class="accent-red">Moto-Taxi</span>
+        </h1>
+
+        <div class="tricolor" style="margin-inline:auto;margin-bottom:1.2rem;"><span></span><span></span><span></span></div>
+
+        <p class="vmdtr-hero-sub">
+          Devenez chauffeur de moto-taxi professionnel.<br/>
+          Formation complète <strong>74h</strong>, agréée par le Ministère des Transports,<br/>
+          financement <strong>CPF disponible</strong>.
+        </p>
+
+        <div class="hero-badges-logos">
+          <div class="badge-logo-item">
+            <img src="/logo-mcf.png" alt="Mon Compte Formation — Financement CPF" class="badge-logo" />
+          </div>
+          <div class="badge-logo-sep" aria-hidden="true"></div>
+          <div class="badge-logo-item">
+            <img src="/logo-qualiopi.png" alt="Certification Qualiopi" class="badge-logo" />
+          </div>
+        </div>
+
+        <div class="scarcity-badge">
+          <span aria-hidden="true">⚡</span>
+          Places limitées chaque mois
+        </div>
+
+        <div class="cta-block">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+            Réserver mon appel gratuit →
+          </a>
+          <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
+            <span aria-hidden="true">🔒</span>
+            Appel gratuit et sans engagement · Lun–Dim
+          </p>
+        </div>
+
+        <div class="vmdtr-hero-stats">
+          <div class="hero-stat">
+            <span class="hs-val">74h</span>
+            <span class="hs-lbl">De formation complète</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-val">96%</span>
+            <span class="hs-lbl">Taux de réussite</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-val">Agréé</span>
+            <span class="hs-lbl">Ministère des Transports</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ L'ESSENTIEL ══ -->
+    <section class="section essentiel">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — VMDTR</p>
+          <h2 class="title-lg" style="color:var(--text);">Formation VMDTR —<br/><span class="accent-blue">L'Essentiel</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="essentiel-grid">
+          <div class="essentiel-card">
+            <span class="essentiel-icon">⏱</span>
+            <span class="essentiel-label">DURÉE</span>
+            <span class="essentiel-value">74 heures</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">🕐</span>
+            <span class="essentiel-label">CRÉNEAUX</span>
+            <span class="essentiel-value">Jour & Soir</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">💳</span>
+            <span class="essentiel-label">FINANCEMENT</span>
+            <span class="essentiel-value">CPF disponible</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">🏆</span>
+            <span class="essentiel-label">RÉUSSITE</span>
+            <span class="essentiel-value">96%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FORMULE ══ -->
+    <section class="section vmdtr-formule">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — Notre formule</p>
+          <h2 class="title-lg" style="color:var(--text);">Choisissez votre<br/><span class="accent-blue">formation</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+          <p style="color:var(--text-muted);font-size:1rem;margin-top:0.5rem;">Financement <strong style="color:var(--blue);">CPF disponible</strong> — notre conseiller vous guide.</p>
+        </div>
+
+        <div class="formule-wrapper">
+          <article class="vmdtr-card">
+            <div class="vmdtr-card-header">
+              <span class="vmdtr-card-mode">🏫 Présentiel — Île-de-France</span>
+              <h3 class="vmdtr-card-title">Formation Standard VMDTR</h3>
+              <div class="vmdtr-card-meta">
+                <span class="vmdtr-duree">⏱ 74h de formation</span>
+                <span class="vmdtr-tag">🌅 Jour &amp; Soir</span>
+              </div>
+            </div>
+
+            <ul class="vmdtr-features">
+              <li><span class="feat-check">✓</span> Formation complète théorique &amp; pratique</li>
+              <li><span class="feat-check">✓</span> Réglementation VMDTR complète</li>
+              <li><span class="feat-check">✓</span> Conduite sécuritaire avec passager</li>
+              <li><span class="feat-check">✓</span> Gestion d'entreprise &amp; statut juridique</li>
+              <li><span class="feat-check">✓</span> Formation PSC1 — Premiers Secours</li>
+              <li><span class="feat-check">✓</span> Examens blancs illimités</li>
+              <li><span class="feat-check">✓</span> Passage examen officiel inclus</li>
+              <li><span class="feat-check">✓</span> Accompagnement administratif complet</li>
+            </ul>
+
+            <div class="vmdtr-cpf">
+              <span aria-hidden="true">💡</span>
+              <strong>Financement CPF disponible</strong>
+            </div>
+
+            <div class="cta-block">
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">
+                Obtenir mon devis gratuit
+              </a>
+              <p class="cta-reassurance">
+                <span>🔒</span> Appel gratuit et sans engagement
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROGRAMME ══ -->
+    <section class="section programme" style="background:var(--bg);">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Programme détaillé</p>
+          <h2 class="title-lg" style="color:var(--text);">Ce que vous allez<br/><span class="accent-blue">apprendre</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="programme-list">
+          {programme.map((item, i) => (
+            <div class="programme-item">
+              <div class="programme-num neon-num">{item.num}</div>
+              <div class="programme-body">
+                <h3 class="programme-title">{item.title}</h3>
+                <p class="programme-desc">{item.desc}</p>
+              </div>
+              {i < programme.length - 1 && <div class="programme-sep"></div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="vmdtr-final dark-section">
+      <div class="orb orb-blue" style="opacity:0.15;left:-80px;top:30%;"></div>
+      <div class="orb orb-red"  style="opacity:0.10;right:-60px;top:60%;"></div>
+      <div class="container text-center">
+        <p class="section-label" style="color:rgba(255,255,255,0.5);">France Conseil & Formations</p>
+        <h2 class="title-lg" style="color:#fff;">Prêt à devenir<br/><span style="color:#5ba8ff;">chauffeur Moto-Taxi ?</span></h2>
+        <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        <p style="color:rgba(255,255,255,0.65);font-size:1rem;margin-top:0.8rem;margin-bottom:2rem;">
+          Un conseiller vous rappelle pour répondre à toutes vos questions<br/>et vous guider dans le financement CPF.
+        </p>
+        <div class="cta-block">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+            Réserver mon appel gratuit →
+          </a>
+          <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
+            <span>🔒</span> Appel gratuit et sans engagement · Lun–Dim
+          </p>
+        </div>
+        <div class="vmdtr-final-stats">
+          <div class="fstat"><span class="fstat-val">74h</span><span class="fstat-lbl">De formation</span></div>
+          <div class="fstat-sep"></div>
+          <div class="fstat"><span class="fstat-val">96%</span><span class="fstat-lbl">Taux de réussite</span></div>
+          <div class="fstat-sep"></div>
+          <div class="fstat"><span class="fstat-val">CPF</span><span class="fstat-lbl">Financement disponible</span></div>
+        </div>
+      </div>
+    </section>
+
   </main>
+  <Footer />
 </Layout>
 
 <style>
-  .vmdtr-page {
+  /* ══ HERO ══ */
+  .vmdtr-hero {
+    position: relative;
     min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg);
-    padding: 2rem 1.2rem;
+    overflow: hidden;
+    padding-top: 72px;
   }
 
-  .vmdtr-inner {
+  .vmdtr-hero-inner {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.5rem;
-    max-width: 600px;
+    padding: clamp(3rem, 8vw, 6rem) 1.2rem clamp(3rem, 6vw, 5rem);
+    max-width: 720px;
+    margin-inline: auto;
+    gap: 0;
+  }
+
+  .logo-neon {
+    position: absolute;
+    top: clamp(1.5rem, 7vw, 4rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,109,222,0.20) 0%, rgba(0,85,164,0.10) 35%, transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .vmdtr-logo {
-    height: 70px;
+    position: relative;
+    z-index: 1;
+    height: clamp(64px, 16vw, 110px);
     width: auto;
     object-fit: contain;
+    margin-bottom: 1.4rem;
+    filter: drop-shadow(0 0 18px rgba(26,109,222,0.30)) drop-shadow(0 4px 20px rgba(0,0,0,0.45));
   }
 
-  .vmdtr-title {
+  .available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(22,163,74,0.12);
+    border: 1px solid rgba(22,163,74,0.38);
+    border-radius: 999px;
+    padding: 0.45em 1.2em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+    letter-spacing: 0.1em;
+    color: #4ade80;
+    margin-bottom: 1rem;
+  }
+
+  .available-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+    50%       { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  }
+
+  .vmdtr-qualiopi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 999px;
+    padding: 0.4em 1.2em;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 1.4rem;
+  }
+
+  .qualiopi-label {
+    background: var(--blue);
+    color: #fff;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.7em;
+    border-radius: 999px;
+  }
+
+  .vmdtr-hero-title {
     font-family: var(--font-title);
     font-weight: 900;
-    font-size: clamp(2.5rem, 8vw, 5rem);
     text-transform: uppercase;
+    font-size: clamp(2.8rem, 9vw, 6rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .vmdtr-hero-sub {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+  }
+
+  .vmdtr-hero-sub strong { color: #fff; }
+
+  .hero-badges-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 1.4rem;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  }
+
+  .badge-logo-item { display: flex; align-items: center; }
+  .badge-logo { height: 42px; width: auto; object-fit: contain; }
+  .badge-logo-sep { width: 1px; height: 36px; background: rgba(0,85,164,0.18); flex-shrink: 0; }
+
+  .scarcity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239,65,53,0.12);
+    border: 1px solid rgba(239,65,53,0.35);
+    border-radius: 999px;
+    padding: 0.4em 1.1em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ff8b7b;
+    margin-bottom: 1.6rem;
+  }
+
+  .vmdtr-cta-btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1.1em 2.8em;
+    border-radius: 6px;
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 32px rgba(239,65,53,0.45);
+  }
+
+  .vmdtr-cta-btn:hover {
+    background: #d63626;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(239,65,53,0.60);
+  }
+
+  .vmdtr-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    width: 100%;
+  }
+
+  .hero-stat { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+  .hs-val { font-family: var(--font-title); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2rem); color: #fff; line-height: 1; }
+  .hs-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; max-width: 120px; text-align: center; line-height: 1.3; }
+  .hero-stat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  .accent-blue { color: #5ba8ff; }
+  .accent-red  { color: var(--red); }
+
+  /* ══ ESSENTIEL ══ */
+  .essentiel { background: var(--bg-alt); }
+
+  .essentiel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .essentiel-card {
+    background: var(--white);
+    border: 1px solid rgba(0,85,164,0.12);
+    box-shadow: 0 2px 20px rgba(0,85,164,0.07);
+    border-radius: 16px;
+    padding: 1.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .essentiel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0,85,164,0.14);
+  }
+
+  .essentiel-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+
+  .essentiel-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .essentiel-value {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--blue);
+    line-height: 1.2;
+    text-shadow: 0 0 12px rgba(0,85,164,0.20);
+  }
+
+  /* ══ FORMULE ══ */
+  .vmdtr-formule { background: var(--bg-mid); }
+
+  .formule-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .vmdtr-card {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    box-shadow: 0 0 0 1px rgba(26,109,222,0.15), 0 8px 40px rgba(0,85,164,0.12);
+  }
+
+  .vmdtr-card-header { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .vmdtr-card-mode {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .vmdtr-card-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: 0 0 10px rgba(26,109,222,0.25);
+    line-height: 1.1;
+  }
+
+  .vmdtr-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+  }
+
+  .vmdtr-duree {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+  }
+
+  .vmdtr-tag {
+    background: rgba(0,85,164,0.08);
+    border: 1px solid rgba(0,85,164,0.18);
+    border-radius: 999px;
+    padding: 0.25em 0.9em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  .vmdtr-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .vmdtr-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
     color: var(--text);
+    line-height: 1.5;
+  }
+
+  .feat-check {
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  .vmdtr-cpf {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,85,164,0.06);
+    border: 1px solid rgba(0,85,164,0.15);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    color: var(--blue);
+  }
+
+  /* ══ PROGRAMME ══ */
+  .programme-list {
+    max-width: 740px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .programme-item {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1.2rem;
+    align-items: start;
+    padding: 1.8rem 0;
+    position: relative;
+  }
+
+  .programme-sep {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: rgba(0,85,164,0.10);
+  }
+
+  .programme-num {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 3rem;
     line-height: 1;
   }
 
-  .accent-blue { color: var(--blue); }
-
-  .vmdtr-sub {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.6;
+  .programme-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
   }
 
-  .vmdtr-back {
-    font-size: 0.88rem;
+  .programme-desc {
+    font-size: 0.92rem;
     color: var(--text-muted);
-    text-decoration: underline;
-    margin-top: 0.5rem;
+    line-height: 1.65;
   }
 
-  .vmdtr-back:hover {
-    color: var(--blue);
+  /* ══ FINAL CTA ══ */
+  .vmdtr-final {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4rem, 10vw, 7rem) 1.2rem;
+  }
+
+  .vmdtr-final-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .fstat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+  .fstat-val { font-family: var(--font-title); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2rem); color: #fff; }
+  .fstat-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; text-align: center; }
+  .fstat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 700px) {
+    .essentiel-grid { grid-template-columns: repeat(2, 1fr); }
+    .programme-item { grid-template-columns: 3.5rem 1fr; }
+    .programme-num { font-size: 2.2rem; }
+    .vmdtr-cta-btn { width: 100%; text-align: center; clip-path: none; border-radius: 8px; }
+    .hero-stat-sep { display: none; }
+    .badge-logo { height: 36px; }
+    .hero-badges-logos { padding: 0.7rem 1.2rem; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .fstat-sep { display: none; }
   }
 </style>
