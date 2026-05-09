@@ -141,8 +141,8 @@ const programme = [
             <span class="avenir-stat-lbl">de croissance du marché moto-taxi en 5 ans</span>
           </div>
           <div class="avenir-stat-card">
-            <span class="avenir-stat-val">2 500€</span>
-            <span class="avenir-stat-lbl">de revenus mensuels dès le démarrage</span>
+            <span class="avenir-stat-val">10 000€</span>
+            <span class="avenir-stat-lbl">de CA estimé à temps plein</span>
           </div>
           <div class="avenir-stat-card">
             <span class="avenir-stat-val">100%</span>
@@ -223,7 +223,7 @@ const programme = [
           <div class="essentiel-card">
             <span class="essentiel-icon">⏱</span>
             <span class="essentiel-label">DURÉE</span>
-            <span class="essentiel-value">74 heures</span>
+            <span class="essentiel-value">2 semaines</span>
           </div>
           <div class="essentiel-card">
             <span class="essentiel-icon">🕐</span>
@@ -254,13 +254,16 @@ const programme = [
           <p style="color:var(--text-muted);font-size:1rem;margin-top:0.5rem;">Financement <strong style="color:var(--blue);">CPF disponible</strong> — notre conseiller vous guide.</p>
         </div>
 
-        <div class="formule-wrapper">
-          <article class="vmdtr-card">
+        <div class="formules-grid">
+
+          <!-- STANDARD -->
+          <article class="vmdtr-card vmdtr-card--popular">
+            <div class="popular-badge">⭐ Populaire</div>
             <div class="vmdtr-card-header">
               <span class="vmdtr-card-mode">🏫 Présentiel — Île-de-France</span>
-              <h3 class="vmdtr-card-title">Formation Standard VMDTR</h3>
+              <h3 class="vmdtr-card-title">Standard VMDTR</h3>
               <div class="vmdtr-card-meta">
-                <span class="vmdtr-duree">⏱ 74h de formation</span>
+                <span class="vmdtr-duree">⏱ 2 semaines de formation</span>
                 <span class="vmdtr-tag">🌅 Jour &amp; Soir</span>
               </div>
             </div>
@@ -290,6 +293,43 @@ const programme = [
               </p>
             </div>
           </article>
+
+          <!-- PASSERELLE -->
+          <article class="vmdtr-card">
+            <div class="vmdtr-card-header">
+              <span class="vmdtr-card-mode">🏫 Présentiel — Île-de-France</span>
+              <h3 class="vmdtr-card-title">Passerelle VMDTR</h3>
+              <div class="vmdtr-card-meta">
+                <span class="vmdtr-duree">⏱ 21h de formation</span>
+                <span class="vmdtr-tag">🌅 Jour &amp; Soir</span>
+              </div>
+            </div>
+
+            <ul class="vmdtr-features">
+              <li><span class="feat-check">✓</span> Réservée aux détenteurs d'une carte VTC ou Taxi</li>
+              <li><span class="feat-check">✓</span> Modules spécifiques VMDTR uniquement</li>
+              <li><span class="feat-check">✓</span> Conduite sécuritaire avec passager</li>
+              <li><span class="feat-check">✓</span> Réglementation spécifique deux-roues</li>
+              <li><span class="feat-check">✓</span> Examens blancs ciblés</li>
+              <li><span class="feat-check">✓</span> Passage examen officiel inclus</li>
+              <li><span class="feat-check">✓</span> Accompagnement administratif complet</li>
+            </ul>
+
+            <div class="vmdtr-cpf">
+              <span aria-hidden="true">💡</span>
+              <strong>Financement CPF disponible</strong>
+            </div>
+
+            <div class="cta-block">
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">
+                Obtenir mon devis gratuit
+              </a>
+              <p class="cta-reassurance">
+                <span>🔒</span> Appel gratuit et sans engagement
+              </p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -605,18 +645,48 @@ const programme = [
   /* ══ FORMULE ══ */
   .vmdtr-formule { background: var(--bg-mid); }
 
-  .formule-wrapper {
-    display: flex;
-    justify-content: center;
+  .formules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
+    max-width: 860px;
+    margin-inline: auto;
+    align-items: start;
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding: 0.3em 1.2em;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,85,164,0.35);
+  }
+
+  .vmdtr-card--popular {
+    border-color: var(--blue);
+    box-shadow:
+      0 0 20px rgba(26,109,222,0.30),
+      0 0 50px rgba(26,109,222,0.12),
+      0 8px 32px rgba(0,85,164,0.15);
+    transform: scale(1.02);
   }
 
   .vmdtr-card {
+    position: relative;
     background: var(--white);
-    border: 2px solid var(--blue-vivid);
+    border: 2px solid rgba(26,109,222,0.30);
     border-radius: 20px;
     padding: 2.5rem 2rem;
-    max-width: 560px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -892,6 +962,8 @@ const programme = [
   @media (max-width: 700px) {
     .essentiel-grid { grid-template-columns: repeat(2, 1fr); }
     .avenir-stats { grid-template-columns: repeat(2, 1fr); }
+    .formules-grid { grid-template-columns: 1fr; }
+    .vmdtr-card--popular { transform: none; }
     .programme-item { grid-template-columns: 3.5rem 1fr; }
     .programme-num { font-size: 2.2rem; }
     .vmdtr-cta-btn { width: 100%; text-align: center; clip-path: none; border-radius: 8px; }
