@@ -95,6 +95,15 @@ const programme = [
           Places limitées chaque mois
         </div>
 
+        <!-- Prérequis permis -->
+        <div class="permis-required">
+          <span class="permis-icon" aria-hidden="true">⚠️</span>
+          <div>
+            <span class="permis-title">Prérequis obligatoire</span>
+            <span class="permis-desc">Être titulaire du <strong>Permis A (moto) depuis au moins 5 ans</strong></span>
+          </div>
+        </div>
+
         <div class="cta-block">
           <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead')">
             Réserver mon appel gratuit →
@@ -252,6 +261,12 @@ const programme = [
           <h2 class="title-lg" style="color:var(--text);">Choisissez votre<br/><span class="accent-blue">formation</span></h2>
           <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
           <p style="color:var(--text-muted);font-size:1rem;margin-top:0.5rem;">Financement <strong style="color:var(--blue);">CPF disponible</strong> — notre conseiller vous guide.</p>
+        </div>
+
+        <!-- Rappel prérequis -->
+        <div class="permis-banner">
+          <span aria-hidden="true">⚠️</span>
+          <p><strong>Prérequis obligatoire :</strong> Être titulaire du <strong>Permis A (moto) depuis au moins 5 ans</strong> pour accéder à la formation VMDTR. Sans ce prérequis, l'inscription ne pourra pas être validée.</p>
         </div>
 
         <div class="formules-grid">
@@ -860,6 +875,59 @@ const programme = [
   .fstat-val { font-family: var(--font-title); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2rem); color: #fff; }
   .fstat-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; text-align: center; }
   .fstat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  /* ══ PRÉREQUIS PERMIS ══ */
+  .permis-required {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: rgba(239, 65, 53, 0.10);
+    border: 1.5px solid rgba(239, 65, 53, 0.45);
+    border-radius: 12px;
+    padding: 0.9rem 1.4rem;
+    margin-bottom: 1.6rem;
+    max-width: 480px;
+    text-align: left;
+  }
+
+  .permis-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .permis-title {
+    display: block;
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ff8b7b;
+    margin-bottom: 0.2rem;
+  }
+
+  .permis-desc {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.4;
+  }
+
+  .permis-desc strong { color: #ffffff; }
+
+  .permis-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    background: rgba(239, 65, 53, 0.07);
+    border: 1.5px solid rgba(239, 65, 53, 0.30);
+    border-radius: 12px;
+    padding: 1rem 1.4rem;
+    margin-bottom: 2rem;
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .permis-banner span { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .permis-banner strong { color: #c0392b; }
 
   /* ══ MÉTIER D'AVENIR ══ */
   .avenir-intro {
