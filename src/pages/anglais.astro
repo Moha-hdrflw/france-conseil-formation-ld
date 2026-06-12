@@ -1,0 +1,951 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
+
+const programme = [
+  {
+    num: "01",
+    title: "Introduction au tourisme & transport",
+    desc: "Vocabulaire de base, se présenter et présenter son métier en anglais, comprendre les enjeux de l'anglais professionnel dans ces secteurs.",
+  },
+  {
+    num: "02",
+    title: "Communication avec clients & voyageurs",
+    desc: "Accueillir et orienter les touristes, répondre aux demandes, gérer les plaintes et les situations difficiles en anglais.",
+  },
+  {
+    num: "03",
+    title: "Anglais du transport",
+    desc: "Vocabulaire des moyens de transport (aérien, maritime, terrestre), consignes de sécurité, billetterie et réservations.",
+  },
+  {
+    num: "04",
+    title: "Hôtellerie & restauration",
+    desc: "Communiquer avec les clients d'un hôtel ou restaurant, expliquer les services, gérer les demandes et les plaintes.",
+  },
+  {
+    num: "05",
+    title: "Itinéraires & circuits touristiques",
+    desc: "Décrire des destinations et attractions, donner des indications, concevoir et présenter un circuit touristique.",
+  },
+  {
+    num: "06",
+    title: "Situations d'urgence & service client",
+    desc: "Réagir efficacement en cas d'urgence, communiquer avec les services de secours, gérer les situations de crise.",
+  },
+  {
+    num: "07",
+    title: "Pratique & mises en situation",
+    desc: "Mises en situation réelles, jeux de rôle, études de cas et test final — évaluation orale et écrite des compétences acquises.",
+  },
+];
+---
+
+<Layout
+  title="Formation Anglais Tourisme & Transport A2 — France Conseil & Formations"
+  description="Formation Anglais Tourisme & Transport, niveau A2 du CECRL. 42h en présentiel, test LanguageCert (LTE) inclus, financement CPF disponible. Réservez votre appel gratuit."
+>
+  <Nav />
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="anglais-hero dark-section">
+      <div class="orb orb-blue" style="opacity:0.18; left:-120px; top:40%;"></div>
+      <div class="orb orb-red"  style="opacity:0.12; right:-80px; top:55%;"></div>
+
+      <div class="anglais-hero-inner">
+        <div class="logo-neon" aria-hidden="true"></div>
+
+        <img src="/logo-fcf.png" alt="France Conseil & Formations" class="anglais-logo" width="200" height="70" />
+
+        <div class="available-badge">
+          <span class="available-dot" aria-hidden="true"></span>
+          CONSEILLERS DISPONIBLES
+        </div>
+
+        <div class="anglais-qualiopi-badge">
+          <span class="qualiopi-label">QUALIOPI</span>
+          <span>Formation certifiée Qualiopi</span>
+        </div>
+
+        <h1 class="anglais-hero-title">
+          Formation<br/>
+          <span class="accent-blue">Anglais</span><br/>
+          <span class="accent-red">Tourisme & Transport</span>
+        </h1>
+
+        <div class="tricolor" style="margin-inline:auto;margin-bottom:1.2rem;"><span></span><span></span><span></span></div>
+
+        <p class="anglais-hero-sub">
+          Atteignez le niveau <strong>A2 du CECRL</strong> et obtenez votre certification <strong>LanguageCert (LTE)</strong>.<br/>
+          Formation complète <strong>42h en présentiel</strong>, financement <strong>CPF disponible</strong>.
+        </p>
+
+        <div class="hero-badges-logos">
+          <div class="badge-logo-item">
+            <img src="/logo-mcf.png" alt="Mon Compte Formation — Financement CPF" class="badge-logo" />
+          </div>
+          <div class="badge-logo-sep" aria-hidden="true"></div>
+          <div class="badge-logo-item">
+            <img src="/logo-qualiopi.png" alt="Certification Qualiopi" class="badge-logo" />
+          </div>
+        </div>
+
+        <div class="scarcity-badge">
+          <span aria-hidden="true">⚡</span>
+          Places limitées chaque mois
+        </div>
+
+        <div class="cta-block">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="anglais-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+            Réserver mon appel gratuit →
+          </a>
+          <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
+            <span aria-hidden="true">🔒</span>
+            Appel gratuit et sans engagement · Lun–Dim
+          </p>
+        </div>
+
+        <div class="anglais-hero-stats">
+          <div class="hero-stat">
+            <span class="hs-val">42h</span>
+            <span class="hs-lbl">De formation en présentiel</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-val">A2</span>
+            <span class="hs-lbl">Niveau CECRL visé</span>
+          </div>
+          <div class="hero-stat-sep"></div>
+          <div class="hero-stat">
+            <span class="hs-val">LTE</span>
+            <span class="hs-lbl">Test LanguageCert inclus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ POURQUOI SE FORMER ══ -->
+    <section class="section avenir" style="background:var(--bg);">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — Anglais Pro</p>
+          <h2 class="title-lg" style="color:var(--text);">L'anglais, un atout<br/><span class="accent-blue">indispensable</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+          <p class="avenir-intro">Dans les métiers du transport et du tourisme, parler anglais fait toute la différence avec une clientèle internationale. Boostez votre activité et votre image professionnelle.</p>
+        </div>
+
+        <!-- Chiffres clés -->
+        <div class="avenir-stats">
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">42h</span>
+            <span class="avenir-stat-lbl">de formation intensive en présentiel</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">Niveau A2</span>
+            <span class="avenir-stat-lbl">du CECRL, reconnu à l'international</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">100%</span>
+            <span class="avenir-stat-lbl">CPF — formation éligible au financement</span>
+          </div>
+          <div class="avenir-stat-card">
+            <span class="avenir-stat-val">Test LTE</span>
+            <span class="avenir-stat-lbl">inclus, dans les 30 jours suivant la formation</span>
+          </div>
+        </div>
+
+        <!-- Atouts -->
+        <div class="avenir-atouts">
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🌍</span>
+            <div>
+              <h3 class="avenir-atout-title">Une clientèle internationale</h3>
+              <p class="avenir-atout-desc">Touristes, voyageurs d'affaires, clients étrangers... Parler anglais vous permet d'accueillir et de rassurer une clientèle plus large, sans jamais être pris au dépourvu.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🚖</span>
+            <div>
+              <h3 class="avenir-atout-title">Un vrai plus pour votre activité</h3>
+              <p class="avenir-atout-desc">Chauffeur VTC, taxi, moto-taxi, hôtellerie... L'anglais professionnel vous démarque, améliore votre relation client et peut développer votre clientèle.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🎓</span>
+            <div>
+              <h3 class="avenir-atout-title">Une certification reconnue</h3>
+              <p class="avenir-atout-desc">Le test LanguageCert (LTE) évalue vos 4 compétences clés — Listening, Reading, Writing, Speaking — et atteste officiellement de votre niveau A2.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">💳</span>
+            <div>
+              <h3 class="avenir-atout-title">Formation finançable par le CPF</h3>
+              <p class="avenir-atout-desc">Mobilisez votre Compte Personnel de Formation pour vous former sans avancer de frais. Notre conseiller vous accompagne dans toutes les démarches.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">🏫</span>
+            <div>
+              <h3 class="avenir-atout-title">Présentiel — immersion totale</h3>
+              <p class="avenir-atout-desc">Formation en petits groupes avec formateurs qualifiés, mises en situation réelles, jeux de rôle et études de cas pour progresser rapidement.</p>
+            </div>
+          </div>
+          <div class="avenir-atout">
+            <span class="avenir-atout-icon">📈</span>
+            <div>
+              <h3 class="avenir-atout-title">Valorisez votre profil</h3>
+              <p class="avenir-atout-desc">Une certification d'anglais professionnel renforce votre CV et votre crédibilité, que vous soyez indépendant ou salarié du secteur transport/tourisme.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA intermédiaire -->
+        <div class="cta-block" style="margin-top:3rem;">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">
+            Je veux progresser en anglais pro →
+          </a>
+          <p class="cta-reassurance"><span>🔒</span> Appel gratuit · Sans engagement · Lun–Dim</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ L'ESSENTIEL ══ -->
+    <section class="section essentiel">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — Anglais Pro</p>
+          <h2 class="title-lg" style="color:var(--text);">Formation Anglais —<br/><span class="accent-blue">L'Essentiel</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="essentiel-grid">
+          <div class="essentiel-card">
+            <span class="essentiel-icon">⏱</span>
+            <span class="essentiel-label">DURÉE</span>
+            <span class="essentiel-value">42 heures</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">🏫</span>
+            <span class="essentiel-label">MODALITÉ</span>
+            <span class="essentiel-value">Présentiel</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">💳</span>
+            <span class="essentiel-label">FINANCEMENT</span>
+            <span class="essentiel-value">CPF disponible</span>
+          </div>
+          <div class="essentiel-card">
+            <span class="essentiel-icon">🏆</span>
+            <span class="essentiel-label">CERTIFICATION</span>
+            <span class="essentiel-value">Test LTE inclus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FORMULE ══ -->
+    <section class="section anglais-formule">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">France Conseil & Formations — Notre formule</p>
+          <h2 class="title-lg" style="color:var(--text);">Choisissez votre<br/><span class="accent-blue">formation</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+          <p style="color:var(--text-muted);font-size:1rem;margin-top:0.5rem;">Financement <strong style="color:var(--blue);">CPF disponible</strong> — notre conseiller vous guide.</p>
+        </div>
+
+        <div class="formules-grid formules-grid--single">
+
+          <article class="anglais-card">
+            <div class="anglais-card-header">
+              <span class="anglais-card-mode">🏫 Présentiel — Île-de-France</span>
+              <h3 class="anglais-card-title">Anglais Tourisme &amp; Transport — Niveau A2</h3>
+              <div class="anglais-card-meta">
+                <span class="anglais-duree">⏱ 42h</span>
+                <span class="anglais-tag">🎓 Niveau A2 CECRL</span>
+                <span class="anglais-tag">📝 Test LTE inclus</span>
+              </div>
+            </div>
+
+            <div class="anglais-price-box">
+              <span class="anglais-price-amount">1 650€</span>
+              <span class="anglais-price-note">Formation éligible au financement CPF — notre conseiller vous guide dans vos démarches</span>
+            </div>
+
+            <ul class="anglais-features">
+              <li><span class="feat-check">✓</span> Formation complète 42h en présentiel</li>
+              <li><span class="feat-check">✓</span> 7 modules : tourisme, transport, hôtellerie, urgences…</li>
+              <li><span class="feat-check">✓</span> Vocabulaire professionnel ciblé transport &amp; tourisme</li>
+              <li><span class="feat-check">✓</span> Mises en situation &amp; jeux de rôle</li>
+              <li><span class="feat-check">✓</span> Préparation au test LanguageCert (LTE)</li>
+              <li><span class="feat-check">✓</span> Passage du test LTE inclus (Listening, Reading, Writing, Speaking)</li>
+              <li><span class="feat-check">✓</span> Formateurs qualifiés, petits groupes</li>
+              <li><span class="feat-check">✓</span> Accompagnement administratif complet</li>
+            </ul>
+
+            <div class="anglais-cpf"><span>💡</span><strong>Financement CPF disponible</strong></div>
+
+            <div class="cta-block">
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">Je réserve mon appel gratuit</a>
+              <p class="cta-reassurance"><span>🔒</span> Appel gratuit et sans engagement</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROGRAMME ══ -->
+    <section class="section programme" style="background:var(--bg);">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Programme détaillé</p>
+          <h2 class="title-lg" style="color:var(--text);">Ce que vous allez<br/><span class="accent-blue">apprendre</span></h2>
+          <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="programme-list">
+          {programme.map((item, i) => (
+            <>
+              <div class="programme-item">
+                <div class="programme-num neon-num">{item.num}</div>
+                <div class="programme-body">
+                  <h3 class="programme-title">{item.title}</h3>
+                  <p class="programme-desc">{item.desc}</p>
+                </div>
+              </div>
+              {i < programme.length - 1 && <div class="programme-sep"></div>}
+            </>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="anglais-final dark-section">
+      <div class="orb orb-blue" style="opacity:0.15;left:-80px;top:30%;"></div>
+      <div class="orb orb-red"  style="opacity:0.10;right:-60px;top:60%;"></div>
+      <div class="container text-center">
+        <p class="section-label" style="color:rgba(255,255,255,0.5);">France Conseil & Formations</p>
+        <h2 class="title-lg" style="color:#fff;">Prêt à booster votre<br/><span style="color:#5ba8ff;">anglais professionnel ?</span></h2>
+        <div class="tricolor" style="margin-inline:auto;"><span></span><span></span><span></span></div>
+        <p style="color:rgba(255,255,255,0.65);font-size:1rem;margin-top:0.8rem;margin-bottom:2rem;">
+          Un conseiller vous rappelle pour répondre à toutes vos questions<br/>et vous guider dans le financement CPF.
+        </p>
+        <div class="cta-block">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="anglais-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+            Réserver mon appel gratuit →
+          </a>
+          <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
+            <span>🔒</span> Appel gratuit et sans engagement · Lun–Dim
+          </p>
+        </div>
+        <div class="anglais-final-stats">
+          <div class="fstat"><span class="fstat-val">42h</span><span class="fstat-lbl">De formation</span></div>
+          <div class="fstat-sep"></div>
+          <div class="fstat"><span class="fstat-val">A2</span><span class="fstat-lbl">Niveau CECRL</span></div>
+          <div class="fstat-sep"></div>
+          <div class="fstat"><span class="fstat-val">CPF</span><span class="fstat-lbl">Financement disponible</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* ══ HERO ══ */
+  .anglais-hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .anglais-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(3rem, 8vw, 6rem) 1.2rem clamp(3rem, 6vw, 5rem);
+    max-width: 720px;
+    margin-inline: auto;
+    gap: 0;
+  }
+
+  .logo-neon {
+    position: absolute;
+    top: clamp(1.5rem, 7vw, 4rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,109,222,0.20) 0%, rgba(0,85,164,0.10) 35%, transparent 70%);
+    filter: blur(30px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .anglais-logo {
+    position: relative;
+    z-index: 1;
+    height: clamp(64px, 16vw, 110px);
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1.4rem;
+    filter: drop-shadow(0 0 18px rgba(26,109,222,0.30)) drop-shadow(0 4px 20px rgba(0,0,0,0.45));
+  }
+
+  .available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(22,163,74,0.12);
+    border: 1px solid rgba(22,163,74,0.38);
+    border-radius: 999px;
+    padding: 0.45em 1.2em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+    letter-spacing: 0.1em;
+    color: #4ade80;
+    margin-bottom: 1rem;
+  }
+
+  .available-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+    50%       { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  }
+
+  .anglais-qualiopi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 999px;
+    padding: 0.4em 1.2em;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 1.4rem;
+  }
+
+  .qualiopi-label {
+    background: var(--blue);
+    color: #fff;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.7em;
+    border-radius: 999px;
+  }
+
+  .anglais-hero-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(2.4rem, 8vw, 5.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .anglais-hero-sub {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    color: rgba(255,255,255,0.72);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+  }
+
+  .anglais-hero-sub strong { color: #fff; }
+
+  .hero-badges-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-bottom: 1.4rem;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  }
+
+  .badge-logo-item { display: flex; align-items: center; }
+  .badge-logo { height: 42px; width: auto; object-fit: contain; }
+  .badge-logo-sep { width: 1px; height: 36px; background: rgba(0,85,164,0.18); flex-shrink: 0; }
+
+  .scarcity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239,65,53,0.12);
+    border: 1px solid rgba(239,65,53,0.35);
+    border-radius: 999px;
+    padding: 0.4em 1.1em;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ff8b7b;
+    margin-bottom: 1.6rem;
+  }
+
+  .anglais-cta-btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1.1em 2.8em;
+    border-radius: 6px;
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 32px rgba(239,65,53,0.45);
+  }
+
+  .anglais-cta-btn:hover {
+    background: #d63626;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(239,65,53,0.60);
+  }
+
+  .anglais-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    width: 100%;
+  }
+
+  .hero-stat { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+  .hs-val { font-family: var(--font-title); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2rem); color: #fff; line-height: 1; }
+  .hs-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; max-width: 130px; text-align: center; line-height: 1.3; }
+  .hero-stat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  .accent-blue { color: #5ba8ff; }
+  .accent-red  { color: var(--red); }
+
+  /* ══ ESSENTIEL ══ */
+  .essentiel { background: var(--bg-alt); }
+
+  .essentiel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .essentiel-card {
+    background: var(--white);
+    border: 1px solid rgba(0,85,164,0.12);
+    box-shadow: 0 2px 20px rgba(0,85,164,0.07);
+    border-radius: 16px;
+    padding: 1.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .essentiel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0,85,164,0.14);
+  }
+
+  .essentiel-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+
+  .essentiel-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .essentiel-value {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--blue);
+    line-height: 1.2;
+    text-shadow: 0 0 12px rgba(0,85,164,0.20);
+  }
+
+  /* ══ FORMULE ══ */
+  .anglais-formule { background: var(--bg-mid); }
+
+  .formules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-inline: auto;
+    align-items: start;
+  }
+
+  .formules-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  .anglais-card {
+    position: relative;
+    background: var(--white);
+    border: 2px solid rgba(26,109,222,0.30);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    box-shadow:
+      0 0 16px rgba(26,109,222,0.35),
+      0 0 40px rgba(26,109,222,0.15),
+      0 8px 32px rgba(0,85,164,0.10);
+  }
+
+  .anglais-card-header { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .anglais-card-mode {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .anglais-card-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: 0 0 10px rgba(26,109,222,0.25);
+    line-height: 1.2;
+  }
+
+  .anglais-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+  }
+
+  .anglais-duree {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue);
+  }
+
+  .anglais-tag {
+    background: rgba(0,85,164,0.08);
+    border: 1px solid rgba(0,85,164,0.18);
+    border-radius: 999px;
+    padding: 0.25em 0.9em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  /* ── Bloc prix ── */
+  .anglais-price-box {
+    background: var(--blue);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,85,164,0.25);
+  }
+
+  .anglais-price-amount {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(255,255,255,0.25);
+  }
+
+  .anglais-price-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  .anglais-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .anglais-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .feat-check {
+    color: var(--blue);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  .anglais-cpf {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,85,164,0.06);
+    border: 1px solid rgba(0,85,164,0.15);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    color: var(--blue);
+  }
+
+  /* ══ PROGRAMME ══ */
+  .programme-list {
+    max-width: 740px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .programme-item {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1.2rem;
+    align-items: start;
+    padding: 1.6rem 1.4rem;
+    background: var(--white);
+    border: 1px solid rgba(26, 109, 222, 0.28);
+    border-radius: 14px;
+    box-shadow:
+      0 0 12px rgba(26, 109, 222, 0.10),
+      0 2px 16px rgba(0, 85, 164, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .programme-item:hover {
+    border-color: rgba(26, 109, 222, 0.55);
+    box-shadow:
+      0 0 20px rgba(26, 109, 222, 0.20),
+      0 4px 24px rgba(0, 85, 164, 0.10);
+    transform: translateY(-2px);
+  }
+
+  .programme-sep { display: none; }
+
+  .programme-num {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .programme-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .programme-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ══ FINAL CTA ══ */
+  .anglais-final {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4rem, 10vw, 7rem) 1.2rem;
+  }
+
+  .anglais-final-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .fstat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+  .fstat-val { font-family: var(--font-title); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2rem); color: #fff; }
+  .fstat-lbl { font-size: 0.76rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; text-align: center; }
+  .fstat-sep { width: 1px; height: 38px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  /* ══ MÉTIER / POURQUOI ══ */
+  .avenir-intro {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin-inline: auto;
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .avenir-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .avenir-stat-card {
+    background: var(--white);
+    border: 1px solid rgba(0,85,164,0.12);
+    border-radius: 14px;
+    padding: 1.6rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 20px rgba(0,85,164,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .avenir-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0,85,164,0.14);
+  }
+
+  .avenir-stat-val {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--blue);
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(0,85,164,0.20);
+  }
+
+  .avenir-stat-lbl {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .avenir-atouts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    margin-top: 3rem;
+  }
+
+  .avenir-atout {
+    background: var(--card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 14px;
+    padding: 1.6rem 1.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .avenir-atout:hover {
+    border-color: rgba(26,109,222,0.55);
+    transform: translateY(-3px);
+  }
+
+  .avenir-atout-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  .avenir-atout-title {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(26,109,222,0.35);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .avenir-atout-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+  }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 860px) {
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
+    .avenir-atouts { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .essentiel-grid { grid-template-columns: repeat(2, 1fr); }
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
+    .formules-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .formules-grid--single { max-width: 480px; }
+    .programme-item { grid-template-columns: 3.5rem 1fr; }
+    .programme-num { font-size: 2.2rem; }
+    .anglais-cta-btn { width: 100%; text-align: center; clip-path: none; border-radius: 8px; }
+    .hero-stat-sep { display: none; }
+    .badge-logo { height: 36px; }
+    .hero-badges-logos { padding: 0.7rem 1.2rem; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .fstat-sep { display: none; }
+    .avenir-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

@@ -1,8 +1,13 @@
 ---
 const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
-const isVmdtr = Astro.url.pathname.startsWith("/vmdtr");
-const otherLabel = isVmdtr ? "FORMATION TAXI & VTC" : "FORMATION VMDTR";
-const otherHref  = isVmdtr ? "/" : "/vmdtr";
+const path = Astro.url.pathname;
+const isVmdtr = path.startsWith("/vmdtr");
+const isAnglais = path.startsWith("/anglais");
+
+const links = [];
+if (!isVmdtr) links.push({ label: "FORMATION VMDTR", short: "VMDTR", href: "/vmdtr" });
+if (!isAnglais) links.push({ label: "FORMATION ANGLAIS", short: "ANGLAIS", href: "/anglais" });
+if (isVmdtr || isAnglais) links.push({ label: "FORMATION TAXI & VTC", short: "TAXI & VTC", href: "/" });
 ---
 
 <header class="nav-wrapper">
@@ -18,9 +23,12 @@ const otherHref  = isVmdtr ? "/" : "/vmdtr";
     </a>
 
     <div class="nav-actions">
-      <a href={otherHref} class="nav-vmdtr-btn">
-        {otherLabel}
-      </a>
+      {links.map((l) => (
+        <a href={l.href} class="nav-vmdtr-btn">
+          <span class="label-full">{l.label}</span>
+          <span class="label-short">{l.short}</span>
+        </a>
+      ))}
       <a
         href={CALENDLY}
         target="_blank"
@@ -28,7 +36,8 @@ const otherHref  = isVmdtr ? "/" : "/vmdtr";
         class="btn-cta nav-cta"
         onclick="fbq && fbq('track', 'Lead')"
       >
-        Réserver mon appel gratuit
+        <span class="label-full">Réserver mon appel gratuit</span>
+        <span class="label-short">Réserver</span>
       </a>
     </div>
   </nav>
@@ -72,8 +81,10 @@ const otherHref  = isVmdtr ? "/" : "/vmdtr";
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .nav-vmdtr-btn {
@@ -101,13 +112,34 @@ const otherHref  = isVmdtr ? "/" : "/vmdtr";
     flex-shrink: 0;
   }
 
-  @media (max-width: 480px) {
+  .label-short {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .label-full {
+      display: none;
+    }
+    .label-short {
+      display: inline;
+    }
     .nav-vmdtr-btn {
-      padding: 0.5em 0.8em;
-      font-size: 0.68rem;
+      padding: 0.5em 0.7em;
+      font-size: 0.66rem;
     }
     .nav-cta {
-      padding: 0.6em 1em;
+      padding: 0.6em 0.9em;
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .nav-actions {
+      gap: 0.4rem;
+    }
+    .nav-vmdtr-btn {
+      padding: 0.45em 0.55em;
+      font-size: 0.6rem;
     }
   }
 </style>
