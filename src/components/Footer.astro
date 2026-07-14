@@ -1,6 +1,8 @@
 ---
 const CALENDLY = "https://calendly.com/servicefranceconseilformation/30min?month=2026-04";
 const year = new Date().getFullYear();
+const footerPath = Astro.url.pathname;
+const leadContent = footerPath.startsWith('/vmdtr') ? 'Formation VMDTR' : footerPath.startsWith('/anglais') ? 'Formation Anglais' : 'Formation VTC Taxi';
 ---
 
 <footer class="footer dark-section">
@@ -22,7 +24,7 @@ const year = new Date().getFullYear();
         target="_blank"
         rel="noopener noreferrer"
         class="btn-cta footer-cta"
-        onclick="fbq && fbq('track', 'Lead')"
+        onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}
       >
         Réserver un appel
       </a>
@@ -52,7 +54,7 @@ const year = new Date().getFullYear();
         <h4 class="footer-col-title">Contact</h4>
         <ul>
           <li>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onclick="fbq && fbq('track', 'Lead')">
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}>
               Réserver un appel gratuit
             </a>
           </li>

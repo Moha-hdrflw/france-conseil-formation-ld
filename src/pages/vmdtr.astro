@@ -105,7 +105,7 @@ const programme = [
         </div>
 
         <div class="cta-block">
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">
             Réserver mon appel gratuit →
           </a>
           <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
@@ -211,7 +211,7 @@ const programme = [
 
         <!-- CTA intermédiaire -->
         <div class="cta-block" style="margin-top:3rem;">
-          <a href="https://calendly.com/servicefranceconseilformation/30min?month=2026-04" target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">
+          <a href="https://calendly.com/servicefranceconseilformation/30min?month=2026-04" target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">
             Je veux devenir chauffeur VMDTR →
           </a>
           <p class="cta-reassurance"><span>🔒</span> Appel gratuit · Sans engagement · Lun–Dim</p>
@@ -293,7 +293,7 @@ const programme = [
             </ul>
             <div class="vmdtr-cpf"><span>💡</span><strong>Financement CPF disponible</strong></div>
             <div class="cta-block">
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">Je réserve mon appel gratuit</a>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">Je réserve mon appel gratuit</a>
               <p class="cta-reassurance"><span>🔒</span> Appel gratuit et sans engagement</p>
             </div>
           </article>
@@ -321,7 +321,7 @@ const programme = [
             </ul>
             <div class="vmdtr-cpf"><span>💡</span><strong>Financement CPF disponible</strong></div>
             <div class="cta-block">
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">Je réserve mon appel gratuit</a>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">Je réserve mon appel gratuit</a>
               <p class="cta-reassurance"><span>🔒</span> Appel gratuit et sans engagement</p>
             </div>
           </article>
@@ -347,7 +347,7 @@ const programme = [
             </ul>
             <div class="vmdtr-cpf"><span>💡</span><strong>Financement CPF disponible</strong></div>
             <div class="cta-block">
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead')">Je réserve mon appel gratuit</a>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-cta" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">Je réserve mon appel gratuit</a>
               <p class="cta-reassurance"><span>🔒</span> Appel gratuit et sans engagement</p>
             </div>
           </article>
@@ -394,7 +394,7 @@ const programme = [
           Un conseiller vous rappelle pour répondre à toutes vos questions<br/>et vous guider dans le financement CPF.
         </p>
         <div class="cta-block">
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead')">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="vmdtr-cta-btn" onclick="fbq && fbq('track', 'Lead', {content_name: 'Formation VMDTR'})">
             Réserver mon appel gratuit →
           </a>
           <p class="cta-reassurance" style="color:rgba(255,255,255,0.42);font-size:0.82rem;">
@@ -413,6 +413,9 @@ const programme = [
 
   </main>
   <Footer />
+  <script is:inline>
+    fbq && fbq('track', 'ViewContent', {content_name: 'Formation VMDTR'});
+  </script>
 </Layout>
 
 <style>

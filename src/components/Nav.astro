@@ -8,6 +8,8 @@ const links = [];
 if (!isVmdtr) links.push({ label: "FORMATION VMDTR", short: "VMDTR", href: "/vmdtr" });
 if (!isAnglais) links.push({ label: "FORMATION ANGLAIS", short: "ANGLAIS", href: "/anglais" });
 if (isVmdtr || isAnglais) links.push({ label: "FORMATION TAXI & VTC", short: "TAXI & VTC", href: "/" });
+
+const leadContent = isVmdtr ? 'Formation VMDTR' : isAnglais ? 'Formation Anglais' : 'Formation VTC Taxi';
 ---
 
 <header class="nav-wrapper">
@@ -34,7 +36,7 @@ if (isVmdtr || isAnglais) links.push({ label: "FORMATION TAXI & VTC", short: "TA
         target="_blank"
         rel="noopener noreferrer"
         class="btn-cta nav-cta"
-        onclick="fbq && fbq('track', 'Lead')"
+        onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}
       >
         <span class="label-full">Réserver mon appel gratuit</span>
         <span class="label-short">Réserver</span>
