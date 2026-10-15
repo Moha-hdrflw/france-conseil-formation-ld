@@ -36,7 +36,7 @@ const leadContent = isVmdtr ? 'Formation VMDTR' : isAnglais ? 'Formation Anglais
         target="_blank"
         rel="noopener noreferrer"
         class="btn-cta nav-cta"
-        onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}
+        onclick={`fbq && fbq('track', 'InitiateCheckout', {content_name: '${leadContent}'})`}
       >
         <span class="label-full">Réserver mon appel gratuit</span>
         <span class="label-short">Réserver</span>

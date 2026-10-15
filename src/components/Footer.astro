@@ -24,7 +24,7 @@ const leadContent = footerPath.startsWith('/vmdtr') ? 'Formation VMDTR' : footer
         target="_blank"
         rel="noopener noreferrer"
         class="btn-cta footer-cta"
-        onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}
+        onclick={`fbq && fbq('track', 'InitiateCheckout', {content_name: '${leadContent}'})`}
       >
         Réserver un appel
       </a>
@@ -54,7 +54,7 @@ const leadContent = footerPath.startsWith('/vmdtr') ? 'Formation VMDTR' : footer
         <h4 class="footer-col-title">Contact</h4>
         <ul>
           <li>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onclick={`fbq && fbq('track', 'Lead', {content_name: '${leadContent}'})`}>
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" onclick={`fbq && fbq('track', 'InitiateCheckout', {content_name: '${leadContent}'})`}>
               Réserver un appel gratuit
             </a>
           </li>
